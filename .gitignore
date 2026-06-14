@@ -1,3 +1,66 @@
+# @file .gitignore
+# @author David Black     GitHub @bballdave025     "signed" DWB
+# @since 2026-06-14
+# For multimodeal-jupy-logger
+
+# Ignore nested __pycache__ directories
+**/__pycache__/
+
+# IPython notebook checkpoints
+**/.ipynb_checkpoints/
+
+#  I specify my different venvs in one of these ways, usually;
+#+ maybe I should expand patterns
+.venv_*
+.venv.*
+
+# None of those *NIX backup files
+*~
+.*~
+*.un~
+
+# None of those Windows Office (at least MS Word) backup files
+$~*
+~$*
+~WRL*
+~*
+
+#*.info
+
+## LET THESE IN!!!
+## (or maybe not)
+
+
+
+#!artifacts/ # Not sure whether to keep or leave out, probably latter
+
+#!*.log  #  The template below excluded logfiles. I've edited it,
+         #+ Now, I can decide what to do up here at the top, though
+         #+ I'm still not sure what I want to do with them.
+
+# Optional: local environment and config files (keep confidential if necessary)
+# *.env
+# .secrets/
+# config_local.py
+
+#  Model weights and large artifacts 
+#+ (do NOT commit large files like trained ResNet-50 weights)
+*.h5
+*.pt
+*.ckpt
+
+
+
+
+
+
+
+
+## >>>>>>>>>>>>>> .gitignore template from GitHub, >>>>>>>>>>>>>>>>>>
+## >>>>>>>>>>>>>> 2026-06-14, about 13:30:00-04:00 >>>>>>>>>>>>>>>>>>
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -56,7 +119,7 @@ cover/
 *.pot
 
 # Django stuff:
-*.log
+##DWB##handled-above#*.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
