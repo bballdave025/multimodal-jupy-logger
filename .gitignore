@@ -3,54 +3,81 @@
 # @since 2026-06-14
 # For multimodeal-jupy-logger
 
-# Ignore nested __pycache__ directories
+# Python caches
+__pycache__/
 **/__pycache__/
+*.py[codz]
+*$py.class
 
-# IPython notebook checkpoints
+# Virtual environments
+.venv/
+.venv_*/
+.venv.*/
+env/
+venv/
+ENV/
+
+# Jupyter/IPython local state
+.ipynb_checkpoints/
 **/.ipynb_checkpoints/
+profile_default/
+ipython_config.py
 
-#  I specify my different venvs in one of these ways, usually;
-#+ maybe I should expand patterns
-.venv_*
-.venv.*
+# MMJL generated local logs/artifacts
+jupy_log/
+mlu_wjupy_log/
+test_jupy_log/
+test_outputs/
 
-# None of those *NIX backup files
+# But let these in
+!assets/
+!*.log
+
+# Build/package outputs
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+MANIFEST
+
+# Test/cache/type-check outputs
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.cache/
+cover/
+
+# Editor/OS backup files
 *~
 .*~
 *.un~
-
-# None of those Windows Office (at least MS Word) backup files
 $~*
 ~$*
 ~WRL*
 ~*
 
-#*.info
+# Local secrets/config
+.env
+.envrc
+.secrets/
+config_local.py
 
-## LET THESE IN!!!
-## (or maybe not)
-
-
-
-#!artifacts/ # Not sure whether to keep or leave out, probably latter
-
-#!*.log  #  The template below excluded logfiles. I've edited it,
-         #+ Now, I can decide what to do up here at the top, though
-         #+ I'm still not sure what I want to do with them.
-
-# Optional: local environment and config files (keep confidential if necessary)
-# *.env
-# .secrets/
-# config_local.py
-
-#  Model weights and large artifacts 
-#+ (do NOT commit large files like trained ResNet-50 weights)
+# Model weights and large checkpoints
 *.h5
 *.pt
+*.pth
 *.ckpt
 
-
-
+# Optional local IDE/runtime files
+tempCodeRunnerFile.py
+.pdm-python
+.pdm-build/
+.pixi/
+__pypackages__/
 
 
 

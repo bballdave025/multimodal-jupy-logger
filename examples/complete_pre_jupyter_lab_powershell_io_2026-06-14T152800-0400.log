@@ -1,0 +1,1253 @@
+(base) PS C:\Users\Anast> cd C:\David\my_repos_dwb
+(base) PS C:\David\my_repos_dwb> ls
+
+
+    Directory: C:\David\my_repos_dwb
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          9/1/2024   1:38 PM                .ipynb_checkpoints
+d-----         7/31/2023   1:50 PM                AmazonSageMakerCourse_retrieved_1690825924_20230731T115204-0600
+d-----         7/23/2023   1:33 PM                ancestry-freq
+d-----         7/15/2024   1:58 PM                aws-udemy-pacing
+d-----         3/17/2025   5:09 PM                binding-unwinding
+d-----         8/28/2025   5:47 PM                cifar10_vanilla_cnn
+d-----         9/13/2024   5:20 PM                colab_slash_content_dir
+d-----         8/16/2025  10:51 PM                congenial-chainsaw-rmfb-html
+d-----         8/10/2023  11:30 AM                courses_tutorials_etc
+d-----          6/1/2024   6:28 PM                cygwin-sudo_ref-Chronial
+d-----         2/12/2025  10:17 AM                dwb-aws-nb-typings
+d-----          4/7/2025  10:34 AM                educative-interview-prep
+d-----         9/12/2024  12:28 AM                envelope-zip-reading
+d-----         4/19/2024   7:36 AM                exercise
+d-----          9/2/2025   7:35 PM                fhtw-paper-code-prep
+d-----         11/9/2023   2:29 PM                fsi
+d-----         11/6/2023   9:11 PM                FULL_TENSORFLOW_NOTES__AND_DATA
+d-----         4/29/2024  11:17 AM                get_workouts_out
+d-----         8/30/2024  11:38 PM                higgs_boson_visualized
+d-----          4/4/2025   2:00 AM                holder
+d-r---         10/4/2024   2:46 PM                job-app-word-freq
+d-----         5/24/2024  10:26 PM                manuscript-waste-reuse-finder
+d-----          7/4/2023  12:05 PM                miniature-engine
+d-----          7/7/2023   3:47 PM                newer_gen_ref
+d-----         9/13/2024   5:38 PM                nlp_w_pytorch_zhongyu-pan
+d-----          6/1/2024   5:45 PM                NO-USE_FOR-REF-ONLY_sudo-for-cygwin_ref-nu744
+d-----         4/22/2026   8:44 AM                nyquist-text-existence
+d-----        12/19/2023   3:02 PM                pacing_make_it_work
+d-----          9/8/2023   3:14 PM                probable-dollop
+d-----          7/7/2023   5:20 PM                programs
+d-----         9/10/2025   8:01 PM                quick_platform
+d-----          6/1/2024   6:32 PM                qwqfetch_ref-nexplorer-3e
+d-----          6/3/2024   6:24 PM                RWKV-LM-LoRA
+d-----          8/9/2024  11:18 AM                rwkv-lora
+d-----         4/18/2026   7:51 PM                scripture-parsing
+d-----        11/21/2023   6:53 PM                solid-rotary-phone
+d-----         9/11/2024  10:52 PM                start-pirate-now
+d-----        11/21/2023   7:46 PM                tensorflow-deep-learning
+d-----        11/14/2023  11:04 AM                upgraded-waffle
+d-----          9/5/2025   2:23 PM                vayzday
+d-----         12/5/2023  10:34 AM                visualization_portfolio
+d-----          6/1/2024   5:40 PM                wsl-sudo_ref-Chronial
+d-----         8/25/2024   1:25 PM                zero-to-mastery-ml
+-a----         2/25/2026   7:59 PM          47150 anti_flame_war_03_1772067546_2026-02-25T195906-0500.out
+-a----         2/25/2026  10:25 AM          47944 anti_flame_war_1772033113_2026-02-25T102513-0500.out
+-a----         2/25/2026  10:25 AM          47944 anti_flame_war_1772033158_2026-02-25T102558-0500.out
+-a----         2/25/2026  12:05 PM          45508 anti_flame_war_1772039122_2026-02-25T120522-0500.out
+-a----         6/28/2024   9:45 AM            313 ascii_codepoint_prints.txt
+-a----         4/28/2025  10:17 PM           8110 checking_classification_output_2025-04-28.txt
+-a----         2/25/2026   8:04 PM          39455 extra_search_03_1772067851_2026-02-25T200411-0500.out
+-a----         2/25/2026   1:15 PM          35949 extra_search_1772043356_2026-02-25T131556-0500.out
+-a----          6/1/2024   4:23 PM           5301 foo_full_environment.yml
+-a----         9/10/2024   5:54 PM         188630 Learning_R.ipynb
+-a----         9/17/2024   2:33 PM           6833 portfolio_templates.txt
+-a----          9/9/2024  10:03 AM           2364 README.md
+-a----         8/16/2023   2:11 PM            418 update_conda.txt
+-a----          7/5/2025  11:56 PM         473360 vayzday-main.zip
+
+
+(base) PS C:\David\my_repos_dwb> git clone git@github.com:bballdave025/multimodal-jupy-logger.git
+Cloning into 'multimodal-jupy-logger'...
+Enter passphrase for key 'C:/Users/Anast/.ssh/id_ed25519-2':
+remote: Enumerating objects: 22, done.
+remote: Counting objects: 100% (22/22), done.
+remote: Compressing objects: 100% (15/15), done.
+remote: Total 22 (delta 4), reused 10 (delta 2), pack-reused 0 (from 0)
+Receiving objects: 100% (22/22), 10.25 KiB | 3.42 MiB/s, done.
+Resolving deltas: 100% (4/4), done.
+(base) PS C:\David\my_repos_dwb> cd .\multimodal-jupy-logger\
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> git branch
+* main
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> ls
+
+
+    Directory: C:\David\my_repos_dwb\multimodal-jupy-logger
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         6/13/2026   2:56 PM                src
+-a----         6/13/2026   2:56 PM           4628 .gitignore
+-a----         6/13/2026   2:56 PM           1068 LICENSE
+-a----         6/13/2026   2:56 PM           2992 README.md
+
+
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> git branch -vv
+* main 612afb6 [origin/main] Create __init__.py
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> git branch -r
+  origin/HEAD -> origin/main
+  origin/initial-code-and-pdf-and-tee
+  origin/main
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> git fetch origin
+Enter passphrase for key 'C:/Users/Anast/.ssh/id_ed25519-2':
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> git branch
+* main
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> git fetch origin
+Enter passphrase for key 'C:/Users/Anast/.ssh/id_ed25519-2':
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> git switch --track origin/initial-code-and-pdf-and-tee
+Switched to a new branch 'initial-code-and-pdf-and-tee'
+branch 'initial-code-and-pdf-and-tee' set up to track 'origin/initial-code-and-pdf-and-tee'.
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> git branch
+* initial-code-and-pdf-and-tee
+  main
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> ls
+
+
+    Directory: C:\David\my_repos_dwb\multimodal-jupy-logger
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         6/13/2026   2:56 PM                src
+-a----         6/13/2026   2:56 PM           4628 .gitignore
+-a----         6/13/2026   2:56 PM           1068 LICENSE
+-a----         6/13/2026   2:56 PM           2992 README.md
+
+
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> cd src
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger\src> ls
+
+
+    Directory: C:\David\my_repos_dwb\multimodal-jupy-logger\src
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         6/14/2026   1:22 PM                multimodal_jupy_logger
+
+
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger\src> cd .\multimodal_jupy_logger\
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger> ls
+
+
+    Directory: C:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/14/2026   1:22 PM          10402 multimodal_jupy_logger.py
+-a----         6/14/2026   1:22 PM              1 __init__.py
+
+
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger> mv multimodal_jupy_logger.py logger.py
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger> ls
+
+
+    Directory: C:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         6/14/2026   1:34 PM          16518 logger.py
+-a----         6/14/2026   1:33 PM           4583 magics.py
+-a----         6/14/2026   1:26 PM              0 metadata.py
+-a----         6/14/2026   1:31 PM           4023 mmjl_cli.py
+-a----         6/14/2026   1:28 PM            393 __init__.py
+
+
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger> git status
+On branch initial-code-and-pdf-and-tee
+Your branch is up to date with 'origin/initial-code-and-pdf-and-tee'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   __init__.py
+        deleted:    multimodal_jupy_logger.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        logger.py
+        magics.py
+        metadata.py
+        mmjl_cli.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger> git add --all
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger> git status
+On branch initial-code-and-pdf-and-tee
+Your branch is up to date with 'origin/initial-code-and-pdf-and-tee'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   __init__.py
+        new file:   logger.py
+        new file:   magics.py
+        new file:   metadata.py
+        new file:   mmjl_cli.py
+        deleted:    multimodal_jupy_logger.py
+
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger> git commit -m "Refactored into different classes"
+[initial-code-and-pdf-and-tee 055dd3d] Refactored into different classes
+ 6 files changed, 1066 insertions(+), 321 deletions(-)
+ create mode 100644 src/multimodal_jupy_logger/logger.py
+ create mode 100644 src/multimodal_jupy_logger/magics.py
+ create mode 100644 src/multimodal_jupy_logger/metadata.py
+ create mode 100644 src/multimodal_jupy_logger/mmjl_cli.py
+ delete mode 100755 src/multimodal_jupy_logger/multimodal_jupy_logger.py
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger> git status
+On branch initial-code-and-pdf-and-tee
+Your branch is ahead of 'origin/initial-code-and-pdf-and-tee' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger> git push
+Enter passphrase for key 'C:/Users/Anast/.ssh/id_ed25519-2':
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (9/9), 7.24 KiB | 7.24 MiB/s, done.
+Total 9 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:bballdave025/multimodal-jupy-logger.git
+   0eb742d..055dd3d  initial-code-and-pdf-and-tee -> initial-code-and-pdf-and-tee
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger> cd ..
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger\src> tree
+Folder PATH listing for volume OS
+Volume serial number is 8669-AC6F
+C:.
+└───multimodal_jupy_logger
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger\src> tree /A /F
+Folder PATH listing for volume OS
+Volume serial number is 8669-AC6F
+C:.
+\---multimodal_jupy_logger
+        logger.py
+        magics.py
+        metadata.py
+        mmjl_cli.py
+        __init__.py
+
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger\src> git branch
+* initial-code-and-pdf-and-tee
+  main
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger\src> git status
+On branch initial-code-and-pdf-and-tee
+Your branch is up to date with 'origin/initial-code-and-pdf-and-tee'.
+
+nothing to commit, working tree clean
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger\src> git pull
+Enter passphrase for key 'C:/Users/Anast/.ssh/id_ed25519-2':
+Already up to date.
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger\src> cd ..\
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> ls *.txt
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> type requirements.txt
+type : Cannot find path 'C:\David\my_repos_dwb\multimodal-jupy-logger\requirements.txt' because it does not exist.
+At line:1 char:1
++ type requirements.txt
++ ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\David\my_rep...equirements.txt:String) [Get-Content], ItemNotFoundEx
+   ception
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand
+
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> date -Format "o"
+2026-06-14T14:29:24.0485521-04:00
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> Get-Content ".gitattributes"
+#  A general, hopefully informative .gitattributes file
+# General attributes for multimodal-jupy-logger
+# Maintains line endings and binary file handling
+##############################################################################
+#@brief:   A .gitattributes file for my MultiModal Jupy Logger (MMJL) project
+#@file     .gitattributes
+#@author   David BLACK    GH: @bballdave025
+#@since    2026-06-14
+#
+#  -v- In case this file gets copied to another repo without changing -v-
+#+ -v- this stuff, there will be a reference to the previous repo     -v-
+#@orig_repo  multimodal-jupy-logger
+#@project    multimodal-jupy-logger
+#@package    None for now.
+
+#
+# Mostly here to preserve *NIX-style line endings, which are very important
+#+ for certain data and text files in the Bourne Again SHell (bash) files,
+#+ ... The python files don't care.
+#
+#@ref : https://git-scm.com/docs/gitattributes
+#@archived-ref = "https://web.archive.org/web/20200527202947/" + \
+#                "https://git-scm.com/docs/gitattributes"
+#
+##############################################################################
+
+#
+#+ Set the default behavior, in case people don't have `core.autocrlf` set.
+#+ I don't know how to make this match core.autocrlf = input
+#+ The closest I can find is
+#+ @ref : https://stackoverflow.com/a/46592252/6505499
+#+ @archived-ref = "https://web.archive.org/web/20200527203643/" + \
+#+                 "https://stackoverflow.com/questions/46590142/" + \
+#+                 "what-is-the-differrence-between-text-auto-and-" + \
+#+                 "text-eol-lf-in-gitattribu/46592252#46592252"
+#
+#>   If you write, in a single .gitattributes file, the two line sequence:
+#>      `* text=auto`
+#>      `* text eol=lf`
+#>  the second line's `text` overrides the first one's, so that `text`
+#>  is set (but not to a value) and `eol` is set to a value, with the
+#>  value being `lf`. Both lines matched, and the second line overrode
+#>  the first.
+#>   If you reverse the two lines:
+#>      `* text eol=lf`
+#>      `* text=auto`
+#>  then again both lines match but now the second line only
+#>  overrides the text setting, so now you have `text` set to `auto`
+#>  and eol set to lf.
+#>      `* text eol=lf`
+#>      `* text=auto`
+#>
+#  I'm pretty sure this second version is giving me what I want.
+#
+
+#
+##  Setting the default behavior, in case people don't have
+##+ `core.autocrlf` set. Linux-style unless using VS or
+##+ specifically doing CMD/PowerShell scripting
+* text eol=lf
+* text=auto
+
+
+## Specific files that ABSOLUTELY need to be treated as text and have
+#+ *NIX-style endings. (Note we have no `*.ext text`, because we do
+#+ not want any files normalized and converted to native line endings
+#+ on checkout.) We also hate CRLF endings, unless someone has built
+#+ on VS or is doing CMD/PowerShell scripting
+
+
+# Force LF for text files
+*.html           text eol=lf
+# See section below for JSON-type; not binary, don't want normalized
+*.yml            text eol=lf
+*.txt            text eol=lf
+*.log            text eol=lf
+*.out            text eol=lf
+*.csv            text eol=lf
+*.md             text eol=lf
+.gitignore       text eol=lf
+.gitattributes   text eol=lf
+
+# Checkpoints
+*.ipynb_checkpoints   -text
+
+## Probably found automatically, but let's make sure
+*.txt            text eol=lf
+*.log            text eol=lf
+*.out            text eol=lf
+*.csv            text eol=lf
+*.md             text eol=lf
+.gitignore       text eol=lf
+.gitattributes   text eol=lf
+
+##  Line endings for specific CMD batch and PowerShell scripts
+##+ (could extend to a pattern)
+*.ps1            text eol=crlf
+*.bat            text eol=crlf
+*.cmd            text eol=crlf
+
+
+## Denote all files that aren't binary, but which we don't want normalized
+*.zip            -text
+    ## Possibly useful
+*.ipynb          -text
+*.json           -text
+        #  JSON notebooks treated as binary to avoid LF issues.
+        #+ Well, not binary, but not treated as text. incl. IPYNB
+*.pdf            -text
+*.docx           -text
+*.doc            -text
+*.rtf            -text
+## For presentational stuff.
+
+#########################
+## BINARY
+###########
+
+## Denote all files that are truly binary and should not be modified
+#*.dll           binary
+#*.exe           binary
+#*.py[codz]      binary
+                        ##  I haven't used any for the project, yet,
+                        ##+ but I think it's a good practice when
+                        ##+ someting might be run on Windows
+                        ##  .gitignore should be set to keep out
+                        ##+ the __pycache__
+#image files (possibly more to add as we put them in the repo)
+*.png            binary
+*.jpg            binary
+*.jpeg           binary
+  #-^- I don't like this extension, but safety
+*.gif            binary
+#audio files (to add as we put them in the repo)
+
+#video files (to add as we put them in the repo)
+
+
+# Model files
+*.h5             binary
+*.pt             binary
+*.ckpt           binary
+
+
+## The following extensions exist on files inside the .git directory.
+## I assume that, with the 'auto', git will take care of them.
+# *.sample ; *.pack ; *.idx
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> Get-Content ".gitignore"
+# @file .gitignore
+# @author David Black     GitHub @bballdave025     "signed" DWB
+# @since 2026-06-14
+# For multimodeal-jupy-logger
+
+# Ignore nested __pycache__ directories
+**/__pycache__/
+
+# IPython notebook checkpoints
+**/.ipynb_checkpoints/
+
+#  I specify my different venvs in one of these ways, usually;
+#+ maybe I should expand patterns
+.venv_*
+.venv.*
+
+# None of those *NIX backup files
+*~
+.*~
+*.un~
+
+# None of those Windows Office (at least MS Word) backup files
+$~*
+~$*
+~WRL*
+~*
+
+#*.info
+
+## LET THESE IN!!!
+## (or maybe not)
+
+
+
+#!artifacts/ # Not sure whether to keep or leave out, probably latter
+
+#!*.log  #  The template below excluded logfiles. I've edited it,
+         #+ Now, I can decide what to do up here at the top, though
+         #+ I'm still not sure what I want to do with them.
+
+# Optional: local environment and config files (keep confidential if necessary)
+# *.env
+# .secrets/
+# config_local.py
+
+#  Model weights and large artifacts
+#+ (do NOT commit large files like trained ResNet-50 weights)
+*.h5
+*.pt
+*.ckpt
+
+
+
+
+
+
+
+
+## >>>>>>>>>>>>>> .gitignore template from GitHub, >>>>>>>>>>>>>>>>>>
+## >>>>>>>>>>>>>> 2026-06-14, about 13:30:00-04:00 >>>>>>>>>>>>>>>>>>
+
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[codz]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#   Usually these files are written by a python script from a template
+#   before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py.cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+##DWB##handled-above#*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+#   For a library or package, you might want to ignore these files since the code is
+#   intended to run in multiple environments; otherwise, check them in:
+# .python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+# Pipfile.lock
+
+# UV
+#   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
+#   This is especially recommended for binary packages to ensure reproducibility, and is more
+#   commonly ignored for libraries.
+# uv.lock
+
+# poetry
+#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
+#   This is especially recommended for binary packages to ensure reproducibility, and is more
+#   commonly ignored for libraries.
+#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
+# poetry.lock
+# poetry.toml
+
+# pdm
+#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
+#   pdm recommends including project-wide configuration in pdm.toml, but excluding .pdm-python.
+#   https://pdm-project.org/en/latest/usage/project/#working-with-version-control
+# pdm.lock
+# pdm.toml
+.pdm-python
+.pdm-build/
+
+# pixi
+#   Similar to Pipfile.lock, it is generally recommended to include pixi.lock in version control.
+# pixi.lock
+#   Pixi creates a virtual environment in the .pixi directory, just like venv module creates one
+#   in the .venv directory. It is recommended not to include this directory in version control.
+.pixi
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# Redis
+*.rdb
+*.aof
+*.pid
+
+# RabbitMQ
+mnesia/
+rabbitmq/
+rabbitmq-data/
+
+# ActiveMQ
+activemq-data/
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.envrc
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# PyCharm
+#   JetBrains specific template is maintained in a separate JetBrains.gitignore that can
+#   be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+#   and can be added to the global gitignore or merged into this file.  For a more nuclear
+#   option (not recommended) you can uncomment the following to ignore the entire idea folder.
+# .idea/
+
+# Abstra
+#   Abstra is an AI-powered process automation framework.
+#   Ignore directories containing user credentials, local state, and settings.
+#   Learn more at https://abstra.io/docs
+.abstra/
+
+# Visual Studio Code
+#   Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore
+#   that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
+#   and can be added to the global gitignore or merged into this file. However, if you prefer,
+#   you could uncomment the following to ignore the entire vscode folder
+# .vscode/
+# Temporary file for partial code execution
+tempCodeRunnerFile.py
+
+# Ruff stuff:
+.ruff_cache/
+
+# PyPI configuration file
+.pypirc
+
+# Marimo
+marimo/_static/
+marimo/_lsp/
+__marimo__/
+
+# Streamlit
+.streamlit/secrets.toml
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> git status
+On branch initial-code-and-pdf-and-tee
+Your branch is up to date with 'origin/initial-code-and-pdf-and-tee'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitattributes
+        requirements-ml.txt
+        requirements.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> # Well, I'm in repo root. Let me do this.
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> git add --all
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> git status
+On branch initial-code-and-pdf-and-tee
+Your branch is up to date with 'origin/initial-code-and-pdf-and-tee'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitattributes
+        modified:   .gitignore
+        new file:   requirements-ml.txt
+        new file:   requirements.txt
+
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> git commit -m ".git* files and requirements*.txt (pre-packaging)"
+[initial-code-and-pdf-and-tee 28d49d9] .git* files and requirements*.txt (pre-packaging)
+ 4 files changed, 233 insertions(+), 1 deletion(-)
+ create mode 100644 .gitattributes
+ create mode 100644 requirements-ml.txt
+ create mode 100644 requirements.txt
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> git status
+On branch initial-code-and-pdf-and-tee
+Your branch is ahead of 'origin/initial-code-and-pdf-and-tee' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> git push
+Enter passphrase for key 'C:/Users/Anast/.ssh/id_ed25519-2':
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 3.33 KiB | 3.33 MiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:bballdave025/multimodal-jupy-logger.git
+   055dd3d..28d49d9  initial-code-and-pdf-and-tee -> initial-code-and-pdf-and-tee
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> git status
+On branch initial-code-and-pdf-and-tee
+Your branch is up to date with 'origin/initial-code-and-pdf-and-tee'.
+
+nothing to commit, working tree clean
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> python -m venv .venv_test_mmjl
+(base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> .\.venv_test_mmjl\Scripts\Activate.ps1
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> #  (.venv_test_mmjl) (base) messes with me
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> #+ Trying to fix it led to a lot of deugging
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> python -c "import sys; print(sys.executable)"
+C:\David\my_repos_dwb\multimodal-jupy-logger\.venv_test_mmjl\Scripts\python.exe
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> #  I wonder why that didn't work for pip upgrade, before.
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> python -m pip install --upgrade pip
+Requirement already satisfied: pip in c:\david\my_repos_dwb\multimodal-jupy-logger\.venv_test_mmjl\lib\site-packages (23.0.1)
+Collecting pip
+  Downloading pip-26.1.2-py3-none-any.whl (1.8 MB)
+     ---------------------------------------- 1.8/1.8 MB 7.7 MB/s eta 0:00:00
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 23.0.1
+    Uninstalling pip-23.0.1:
+      Successfully uninstalled pip-23.0.1
+Successfully installed pip-26.1.2
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> python -m pip install -r requirements.txt
+Collecting jupyterlab (from -r requirements.txt (line 1))
+  Downloading jupyterlab-4.5.8-py3-none-any.whl.metadata (16 kB)
+Collecting ipykernel (from -r requirements.txt (line 2))
+  Downloading ipykernel-7.3.0-py3-none-any.whl.metadata (4.5 kB)
+Collecting ipywidgets (from -r requirements.txt (line 3))
+  Using cached ipywidgets-8.1.8-py3-none-any.whl.metadata (2.4 kB)
+Collecting numpy (from -r requirements.txt (line 5))
+  Using cached numpy-2.2.6-cp310-cp310-win_amd64.whl.metadata (60 kB)
+Collecting scipy (from -r requirements.txt (line 6))
+  Using cached scipy-1.15.3-cp310-cp310-win_amd64.whl.metadata (60 kB)
+Collecting pandas<3.0.0,>=2.0.0 (from -r requirements.txt (line 7))
+  Downloading pandas-2.3.3-cp310-cp310-win_amd64.whl.metadata (19 kB)
+Collecting scikit-learn (from -r requirements.txt (line 8))
+  Downloading scikit_learn-1.7.2-cp310-cp310-win_amd64.whl.metadata (11 kB)
+Collecting matplotlib (from -r requirements.txt (line 9))
+  Downloading matplotlib-3.10.9-cp310-cp310-win_amd64.whl.metadata (52 kB)
+Collecting pillow (from -r requirements.txt (line 10))
+  Downloading pillow-12.2.0-cp310-cp310-win_amd64.whl.metadata (9.0 kB)
+Collecting imageio (from -r requirements.txt (line 11))
+  Downloading imageio-2.37.3-py3-none-any.whl.metadata (9.7 kB)
+Collecting nbformat (from -r requirements.txt (line 13))
+  Using cached nbformat-5.10.4-py3-none-any.whl.metadata (3.6 kB)
+Collecting traitlets (from -r requirements.txt (line 15))
+  Downloading traitlets-5.15.1-py3-none-any.whl.metadata (10 kB)
+Collecting nbconvert[webpdf] (from -r requirements.txt (line 14))
+  Using cached nbconvert-7.17.1-py3-none-any.whl.metadata (8.4 kB)
+Collecting python-dateutil>=2.8.2 (from pandas<3.0.0,>=2.0.0->-r requirements.txt (line 7))
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting pytz>=2020.1 (from pandas<3.0.0,>=2.0.0->-r requirements.txt (line 7))
+  Downloading pytz-2026.2-py2.py3-none-any.whl.metadata (22 kB)
+Collecting tzdata>=2022.7 (from pandas<3.0.0,>=2.0.0->-r requirements.txt (line 7))
+  Downloading tzdata-2026.2-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting async-lru>=1.0.0 (from jupyterlab->-r requirements.txt (line 1))
+  Using cached async_lru-2.3.0-py3-none-any.whl.metadata (7.6 kB)
+Collecting httpx<1,>=0.25.0 (from jupyterlab->-r requirements.txt (line 1))
+  Using cached httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Collecting jinja2>=3.0.3 (from jupyterlab->-r requirements.txt (line 1))
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting jupyter-core (from jupyterlab->-r requirements.txt (line 1))
+  Using cached jupyter_core-5.9.1-py3-none-any.whl.metadata (1.5 kB)
+Collecting jupyter-lsp>=2.0.0 (from jupyterlab->-r requirements.txt (line 1))
+  Using cached jupyter_lsp-2.3.1-py3-none-any.whl.metadata (1.8 kB)
+Collecting jupyter-server<3,>=2.4.0 (from jupyterlab->-r requirements.txt (line 1))
+  Downloading jupyter_server-2.19.0-py3-none-any.whl.metadata (8.5 kB)
+Collecting jupyterlab-server<3,>=2.28.0 (from jupyterlab->-r requirements.txt (line 1))
+  Using cached jupyterlab_server-2.28.0-py3-none-any.whl.metadata (5.9 kB)
+Collecting notebook-shim>=0.2 (from jupyterlab->-r requirements.txt (line 1))
+  Using cached notebook_shim-0.2.4-py3-none-any.whl.metadata (4.0 kB)
+Collecting packaging>=23.2 (from jupyterlab->-r requirements.txt (line 1))
+  Downloading packaging-26.2-py3-none-any.whl.metadata (3.5 kB)
+Requirement already satisfied: setuptools>=41.1.0 in .\.venv_test_mmjl\lib\site-packages (from jupyterlab->-r requirements.txt (line 1)) (65.5.0)
+Collecting tomli>=1.2.2 (from jupyterlab->-r requirements.txt (line 1))
+  Using cached tomli-2.4.1-py3-none-any.whl.metadata (10 kB)
+Collecting tornado>=6.2.0 (from jupyterlab->-r requirements.txt (line 1))
+  Downloading tornado-6.5.7-cp39-abi3-win_amd64.whl.metadata (2.9 kB)
+Collecting anyio (from httpx<1,>=0.25.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached anyio-4.13.0-py3-none-any.whl.metadata (4.5 kB)
+Collecting certifi (from httpx<1,>=0.25.0->jupyterlab->-r requirements.txt (line 1))
+  Downloading certifi-2026.5.20-py3-none-any.whl.metadata (2.5 kB)
+Collecting httpcore==1.* (from httpx<1,>=0.25.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting idna (from httpx<1,>=0.25.0->jupyterlab->-r requirements.txt (line 1))
+  Downloading idna-3.18-py3-none-any.whl.metadata (6.1 kB)
+Collecting h11>=0.16 (from httpcore==1.*->httpx<1,>=0.25.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting argon2-cffi>=21.1 (from jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached argon2_cffi-25.1.0-py3-none-any.whl.metadata (4.1 kB)
+Collecting jupyter-client>=7.4.4 (from jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Downloading jupyter_client-8.9.1-py3-none-any.whl.metadata (8.5 kB)
+Collecting jupyter-events>=0.11.0 (from jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Downloading jupyter_events-0.12.1-py3-none-any.whl.metadata (5.8 kB)
+Collecting jupyter-server-terminals>=0.4.4 (from jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached jupyter_server_terminals-0.5.4-py3-none-any.whl.metadata (5.9 kB)
+Collecting overrides>=5.0 (from jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached overrides-7.7.0-py3-none-any.whl.metadata (5.8 kB)
+Collecting prometheus-client>=0.9 (from jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached prometheus_client-0.25.0-py3-none-any.whl.metadata (2.1 kB)
+Collecting pywinpty>=2.0.1 (from jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Downloading pywinpty-3.0.5-cp310-cp310-win_amd64.whl.metadata (5.9 kB)
+Collecting pyzmq>=24 (from jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached pyzmq-27.1.0-cp310-cp310-win_amd64.whl.metadata (6.0 kB)
+Collecting send2trash>=1.8.2 (from jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached send2trash-2.1.0-py3-none-any.whl.metadata (4.1 kB)
+Collecting terminado>=0.8.3 (from jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached terminado-0.18.1-py3-none-any.whl.metadata (5.8 kB)
+Collecting websocket-client>=1.7 (from jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached websocket_client-1.9.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting babel>=2.10 (from jupyterlab-server<3,>=2.28.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached babel-2.18.0-py3-none-any.whl.metadata (2.2 kB)
+Collecting json5>=0.9.0 (from jupyterlab-server<3,>=2.28.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached json5-0.14.0-py3-none-any.whl.metadata (36 kB)
+Collecting jsonschema>=4.18.0 (from jupyterlab-server<3,>=2.28.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+Collecting requests>=2.31 (from jupyterlab-server<3,>=2.28.0->jupyterlab->-r requirements.txt (line 1))
+  Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting comm>=0.1.1 (from ipykernel->-r requirements.txt (line 2))
+  Using cached comm-0.2.3-py3-none-any.whl.metadata (3.7 kB)
+Collecting debugpy>=1.6.5 (from ipykernel->-r requirements.txt (line 2))
+  Downloading debugpy-1.8.21-cp310-cp310-win_amd64.whl.metadata (1.5 kB)
+Collecting ipython>=7.23.1 (from ipykernel->-r requirements.txt (line 2))
+  Using cached ipython-8.39.0-py3-none-any.whl.metadata (5.1 kB)
+Collecting matplotlib-inline>=0.1 (from ipykernel->-r requirements.txt (line 2))
+  Downloading matplotlib_inline-0.2.2-py3-none-any.whl.metadata (2.4 kB)
+Collecting nest-asyncio2>=1.7.0 (from ipykernel->-r requirements.txt (line 2))
+  Downloading nest_asyncio2-1.7.2-py3-none-any.whl.metadata (6.3 kB)
+Collecting psutil>=5.7 (from ipykernel->-r requirements.txt (line 2))
+  Using cached psutil-7.2.2-cp37-abi3-win_amd64.whl.metadata (22 kB)
+Collecting widgetsnbextension~=4.0.14 (from ipywidgets->-r requirements.txt (line 3))
+  Using cached widgetsnbextension-4.0.15-py3-none-any.whl.metadata (1.6 kB)
+Collecting jupyterlab_widgets~=3.0.15 (from ipywidgets->-r requirements.txt (line 3))
+  Using cached jupyterlab_widgets-3.0.16-py3-none-any.whl.metadata (20 kB)
+Collecting joblib>=1.2.0 (from scikit-learn->-r requirements.txt (line 8))
+  Downloading joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)
+Collecting threadpoolctl>=3.1.0 (from scikit-learn->-r requirements.txt (line 8))
+  Using cached threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+Collecting contourpy>=1.0.1 (from matplotlib->-r requirements.txt (line 9))
+  Using cached contourpy-1.3.2-cp310-cp310-win_amd64.whl.metadata (5.5 kB)
+Collecting cycler>=0.10 (from matplotlib->-r requirements.txt (line 9))
+  Using cached cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.22.0 (from matplotlib->-r requirements.txt (line 9))
+  Downloading fonttools-4.63.0-cp310-cp310-win_amd64.whl.metadata (121 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib->-r requirements.txt (line 9))
+  Downloading kiwisolver-1.5.0-cp310-cp310-win_amd64.whl.metadata (5.2 kB)
+Collecting pyparsing>=3 (from matplotlib->-r requirements.txt (line 9))
+  Using cached pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+Collecting fastjsonschema>=2.15 (from nbformat->-r requirements.txt (line 13))
+  Using cached fastjsonschema-2.21.2-py3-none-any.whl.metadata (2.3 kB)
+Collecting beautifulsoup4 (from nbconvert[webpdf]->-r requirements.txt (line 14))
+  Downloading beautifulsoup4-4.15.0-py3-none-any.whl.metadata (3.8 kB)
+Collecting bleach!=5.0.0 (from bleach[css]!=5.0.0->nbconvert[webpdf]->-r requirements.txt (line 14))
+  Downloading bleach-6.4.0-py3-none-any.whl.metadata (32 kB)
+Collecting defusedxml (from nbconvert[webpdf]->-r requirements.txt (line 14))
+  Using cached defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+Collecting jupyterlab-pygments (from nbconvert[webpdf]->-r requirements.txt (line 14))
+  Using cached jupyterlab_pygments-0.3.0-py3-none-any.whl.metadata (4.4 kB)
+Collecting markupsafe>=2.0 (from nbconvert[webpdf]->-r requirements.txt (line 14))
+  Using cached markupsafe-3.0.3-cp310-cp310-win_amd64.whl.metadata (2.8 kB)
+Collecting mistune<4,>=2.0.3 (from nbconvert[webpdf]->-r requirements.txt (line 14))
+  Downloading mistune-3.2.1-py3-none-any.whl.metadata (1.9 kB)
+Collecting nbclient>=0.5.0 (from nbconvert[webpdf]->-r requirements.txt (line 14))
+  Downloading nbclient-0.11.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting pandocfilters>=1.4.1 (from nbconvert[webpdf]->-r requirements.txt (line 14))
+  Using cached pandocfilters-1.5.1-py2.py3-none-any.whl.metadata (9.0 kB)
+Collecting pygments>=2.4.1 (from nbconvert[webpdf]->-r requirements.txt (line 14))
+  Using cached pygments-2.20.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting playwright (from nbconvert[webpdf]->-r requirements.txt (line 14))
+  Downloading playwright-1.60.0-py3-none-win_amd64.whl.metadata (3.5 kB)
+Collecting typing-extensions (from mistune<4,>=2.0.3->nbconvert[webpdf]->-r requirements.txt (line 14))
+  Using cached typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting exceptiongroup>=1.0.2 (from anyio->httpx<1,>=0.25.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached exceptiongroup-1.3.1-py3-none-any.whl.metadata (6.7 kB)
+Collecting argon2-cffi-bindings (from argon2-cffi>=21.1->jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached argon2_cffi_bindings-25.1.0-cp39-abi3-win_amd64.whl.metadata (7.5 kB)
+Collecting webencodings (from bleach!=5.0.0->bleach[css]!=5.0.0->nbconvert[webpdf]->-r requirements.txt (line 14))
+  Using cached webencodings-0.5.1-py2.py3-none-any.whl.metadata (2.1 kB)
+Collecting tinycss2>=1.1.0 (from bleach[css]!=5.0.0->nbconvert[webpdf]->-r requirements.txt (line 14))
+  Downloading tinycss2-1.5.1-py3-none-any.whl.metadata (3.0 kB)
+Collecting colorama (from ipython>=7.23.1->ipykernel->-r requirements.txt (line 2))
+  Using cached colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Collecting decorator (from ipython>=7.23.1->ipykernel->-r requirements.txt (line 2))
+  Downloading decorator-5.3.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting jedi>=0.16 (from ipython>=7.23.1->ipykernel->-r requirements.txt (line 2))
+  Downloading jedi-0.20.0-py2.py3-none-any.whl.metadata (23 kB)
+Collecting prompt_toolkit<3.1.0,>=3.0.41 (from ipython>=7.23.1->ipykernel->-r requirements.txt (line 2))
+  Using cached prompt_toolkit-3.0.52-py3-none-any.whl.metadata (6.4 kB)
+Collecting stack_data (from ipython>=7.23.1->ipykernel->-r requirements.txt (line 2))
+  Using cached stack_data-0.6.3-py3-none-any.whl.metadata (18 kB)
+Collecting wcwidth (from prompt_toolkit<3.1.0,>=3.0.41->ipython>=7.23.1->ipykernel->-r requirements.txt (line 2))
+  Downloading wcwidth-0.8.1-py3-none-any.whl.metadata (43 kB)
+Collecting parso<0.9.0,>=0.8.6 (from jedi>=0.16->ipython>=7.23.1->ipykernel->-r requirements.txt (line 2))
+  Downloading parso-0.8.7-py2.py3-none-any.whl.metadata (8.2 kB)
+Collecting attrs>=22.2.0 (from jsonschema>=4.18.0->jupyterlab-server<3,>=2.28.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=4.18.0->jupyterlab-server<3,>=2.28.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting referencing>=0.28.4 (from jsonschema>=4.18.0->jupyterlab-server<3,>=2.28.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting rpds-py>=0.25.0 (from jsonschema>=4.18.0->jupyterlab-server<3,>=2.28.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached rpds_py-0.30.0-cp310-cp310-win_amd64.whl.metadata (4.2 kB)
+Collecting platformdirs>=2.5 (from jupyter-core->jupyterlab->-r requirements.txt (line 1))
+  Downloading platformdirs-4.10.0-py3-none-any.whl.metadata (5.5 kB)
+Collecting python-json-logger>=2.0.4 (from jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached python_json_logger-4.1.0-py3-none-any.whl.metadata (3.7 kB)
+Collecting pyyaml>=5.3 (from jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached pyyaml-6.0.3-cp310-cp310-win_amd64.whl.metadata (2.4 kB)
+Collecting rfc3339-validator (from jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached rfc3339_validator-0.1.4-py2.py3-none-any.whl.metadata (1.5 kB)
+Collecting rfc3986-validator>=0.1.1 (from jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached rfc3986_validator-0.1.1-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting fqdn (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached fqdn-1.5.1-py3-none-any.whl.metadata (1.4 kB)
+Collecting isoduration (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached isoduration-20.11.0-py3-none-any.whl.metadata (5.7 kB)
+Collecting jsonpointer>1.13 (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached jsonpointer-3.1.1-py3-none-any.whl.metadata (2.4 kB)
+Collecting rfc3987-syntax>=1.1.0 (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached rfc3987_syntax-1.1.0-py3-none-any.whl.metadata (7.7 kB)
+Collecting uri-template (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached uri_template-1.3.0-py3-none-any.whl.metadata (8.8 kB)
+Collecting webcolors>=24.6.0 (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached webcolors-25.10.0-py3-none-any.whl.metadata (2.2 kB)
+Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas<3.0.0,>=2.0.0->-r requirements.txt (line 7))
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting charset_normalizer<4,>=2 (from requests>=2.31->jupyterlab-server<3,>=2.28.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached charset_normalizer-3.4.7-cp310-cp310-win_amd64.whl.metadata (41 kB)
+Collecting urllib3<3,>=1.26 (from requests>=2.31->jupyterlab-server<3,>=2.28.0->jupyterlab->-r requirements.txt (line 1))
+  Downloading urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)
+Collecting lark>=1.2.2 (from rfc3987-syntax>=1.1.0->jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached lark-1.3.1-py3-none-any.whl.metadata (1.8 kB)
+Collecting cffi>=1.0.1 (from argon2-cffi-bindings->argon2-cffi>=21.1->jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached cffi-2.0.0-cp310-cp310-win_amd64.whl.metadata (2.6 kB)
+Collecting pycparser (from cffi>=1.0.1->argon2-cffi-bindings->argon2-cffi>=21.1->jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Collecting soupsieve>=1.6.1 (from beautifulsoup4->nbconvert[webpdf]->-r requirements.txt (line 14))
+  Downloading soupsieve-2.8.4-py3-none-any.whl.metadata (4.6 kB)
+Collecting arrow>=0.15.0 (from isoduration->jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.11.0->jupyter-server<3,>=2.4.0->jupyterlab->-r requirements.txt (line 1))
+  Using cached arrow-1.4.0-py3-none-any.whl.metadata (7.7 kB)
+Collecting pyee<14,>=13 (from playwright->nbconvert[webpdf]->-r requirements.txt (line 14))
+  Downloading pyee-13.0.1-py3-none-any.whl.metadata (3.0 kB)
+Collecting greenlet<4.0.0,>=3.1.1 (from playwright->nbconvert[webpdf]->-r requirements.txt (line 14))
+  Downloading greenlet-3.5.1-cp310-cp310-win_amd64.whl.metadata (3.9 kB)
+Collecting executing>=1.2.0 (from stack_data->ipython>=7.23.1->ipykernel->-r requirements.txt (line 2))
+  Using cached executing-2.2.1-py2.py3-none-any.whl.metadata (8.9 kB)
+Collecting asttokens>=2.1.0 (from stack_data->ipython>=7.23.1->ipykernel->-r requirements.txt (line 2))
+  Using cached asttokens-3.0.1-py3-none-any.whl.metadata (4.9 kB)
+Collecting pure-eval (from stack_data->ipython>=7.23.1->ipykernel->-r requirements.txt (line 2))
+  Using cached pure_eval-0.2.3-py3-none-any.whl.metadata (6.3 kB)
+Downloading pandas-2.3.3-cp310-cp310-win_amd64.whl (11.3 MB)
+   ---------------------------------------- 11.3/11.3 MB 14.2 MB/s  0:00:00
+Downloading jupyterlab-4.5.8-py3-none-any.whl (12.4 MB)
+   ---------------------------------------- 12.4/12.4 MB 23.0 MB/s  0:00:00
+Using cached httpx-0.28.1-py3-none-any.whl (73 kB)
+Using cached httpcore-1.0.9-py3-none-any.whl (78 kB)
+Downloading jupyter_server-2.19.0-py3-none-any.whl (392 kB)
+Using cached jupyterlab_server-2.28.0-py3-none-any.whl (59 kB)
+Downloading ipykernel-7.3.0-py3-none-any.whl (120 kB)
+Using cached ipywidgets-8.1.8-py3-none-any.whl (139 kB)
+Using cached jupyterlab_widgets-3.0.16-py3-none-any.whl (914 kB)
+Using cached widgetsnbextension-4.0.15-py3-none-any.whl (2.2 MB)
+Using cached numpy-2.2.6-cp310-cp310-win_amd64.whl (12.9 MB)
+Using cached scipy-1.15.3-cp310-cp310-win_amd64.whl (41.3 MB)
+Downloading scikit_learn-1.7.2-cp310-cp310-win_amd64.whl (8.9 MB)
+   ---------------------------------------- 8.9/8.9 MB 15.3 MB/s  0:00:00
+Downloading matplotlib-3.10.9-cp310-cp310-win_amd64.whl (8.2 MB)
+   ---------------------------------------- 8.2/8.2 MB 17.5 MB/s  0:00:00
+Downloading pillow-12.2.0-cp310-cp310-win_amd64.whl (7.1 MB)
+   ---------------------------------------- 7.1/7.1 MB 18.9 MB/s  0:00:00
+Downloading imageio-2.37.3-py3-none-any.whl (317 kB)
+Using cached nbformat-5.10.4-py3-none-any.whl (78 kB)
+Using cached nbconvert-7.17.1-py3-none-any.whl (261 kB)
+Downloading mistune-3.2.1-py3-none-any.whl (53 kB)
+Downloading traitlets-5.15.1-py3-none-any.whl (85 kB)
+Using cached anyio-4.13.0-py3-none-any.whl (114 kB)
+Using cached argon2_cffi-25.1.0-py3-none-any.whl (14 kB)
+Using cached async_lru-2.3.0-py3-none-any.whl (8.4 kB)
+Using cached babel-2.18.0-py3-none-any.whl (10.2 MB)
+Downloading bleach-6.4.0-py3-none-any.whl (165 kB)
+Using cached comm-0.2.3-py3-none-any.whl (7.3 kB)
+Using cached contourpy-1.3.2-cp310-cp310-win_amd64.whl (221 kB)
+Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading debugpy-1.8.21-cp310-cp310-win_amd64.whl (5.3 MB)
+   ---------------------------------------- 5.3/5.3 MB 17.1 MB/s  0:00:00
+Using cached exceptiongroup-1.3.1-py3-none-any.whl (16 kB)
+Using cached fastjsonschema-2.21.2-py3-none-any.whl (24 kB)
+Downloading fonttools-4.63.0-cp310-cp310-win_amd64.whl (1.6 MB)
+   ---------------------------------------- 1.6/1.6 MB 4.9 MB/s  0:00:00
+Using cached h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading idna-3.18-py3-none-any.whl (65 kB)
+Using cached ipython-8.39.0-py3-none-any.whl (831 kB)
+Using cached prompt_toolkit-3.0.52-py3-none-any.whl (391 kB)
+Downloading jedi-0.20.0-py2.py3-none-any.whl (4.9 MB)
+   ---------------------------------------- 4.9/4.9 MB 18.5 MB/s  0:00:00
+Downloading parso-0.8.7-py2.py3-none-any.whl (107 kB)
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading joblib-1.5.3-py3-none-any.whl (309 kB)
+Using cached json5-0.14.0-py3-none-any.whl (36 kB)
+Using cached jsonschema-4.26.0-py3-none-any.whl (90 kB)
+Using cached attrs-26.1.0-py3-none-any.whl (67 kB)
+Using cached jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+Downloading jupyter_client-8.9.1-py3-none-any.whl (109 kB)
+Using cached jupyter_core-5.9.1-py3-none-any.whl (29 kB)
+Downloading jupyter_events-0.12.1-py3-none-any.whl (19 kB)
+Using cached jsonpointer-3.1.1-py3-none-any.whl (7.7 kB)
+Using cached jupyter_lsp-2.3.1-py3-none-any.whl (77 kB)
+Using cached jupyter_server_terminals-0.5.4-py3-none-any.whl (13 kB)
+Downloading kiwisolver-1.5.0-cp310-cp310-win_amd64.whl (73 kB)
+Using cached markupsafe-3.0.3-cp310-cp310-win_amd64.whl (15 kB)
+Downloading matplotlib_inline-0.2.2-py3-none-any.whl (9.5 kB)
+Downloading nbclient-0.11.0-py3-none-any.whl (25 kB)
+Downloading nest_asyncio2-1.7.2-py3-none-any.whl (7.8 kB)
+Using cached notebook_shim-0.2.4-py3-none-any.whl (13 kB)
+Using cached overrides-7.7.0-py3-none-any.whl (17 kB)
+Downloading packaging-26.2-py3-none-any.whl (100 kB)
+Using cached pandocfilters-1.5.1-py2.py3-none-any.whl (8.7 kB)
+Downloading platformdirs-4.10.0-py3-none-any.whl (22 kB)
+Using cached prometheus_client-0.25.0-py3-none-any.whl (64 kB)
+Using cached psutil-7.2.2-cp37-abi3-win_amd64.whl (137 kB)
+Using cached pygments-2.20.0-py3-none-any.whl (1.2 MB)
+Using cached pyparsing-3.3.2-py3-none-any.whl (122 kB)
+Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Using cached python_json_logger-4.1.0-py3-none-any.whl (15 kB)
+Downloading pytz-2026.2-py2.py3-none-any.whl (510 kB)
+Downloading pywinpty-3.0.5-cp310-cp310-win_amd64.whl (2.1 MB)
+   ---------------------------------------- 2.1/2.1 MB 7.8 MB/s  0:00:00
+Using cached pyyaml-6.0.3-cp310-cp310-win_amd64.whl (158 kB)
+Using cached pyzmq-27.1.0-cp310-cp310-win_amd64.whl (632 kB)
+Using cached referencing-0.37.0-py3-none-any.whl (26 kB)
+Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Using cached charset_normalizer-3.4.7-cp310-cp310-win_amd64.whl (159 kB)
+Downloading urllib3-2.7.0-py3-none-any.whl (131 kB)
+Downloading certifi-2026.5.20-py3-none-any.whl (134 kB)
+Using cached rfc3986_validator-0.1.1-py2.py3-none-any.whl (4.2 kB)
+Using cached rfc3987_syntax-1.1.0-py3-none-any.whl (8.0 kB)
+Using cached lark-1.3.1-py3-none-any.whl (113 kB)
+Using cached rpds_py-0.30.0-cp310-cp310-win_amd64.whl (235 kB)
+Using cached send2trash-2.1.0-py3-none-any.whl (17 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Using cached terminado-0.18.1-py3-none-any.whl (14 kB)
+Using cached threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Downloading tinycss2-1.5.1-py3-none-any.whl (28 kB)
+Using cached tomli-2.4.1-py3-none-any.whl (14 kB)
+Downloading tornado-6.5.7-cp39-abi3-win_amd64.whl (451 kB)
+Using cached typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Downloading tzdata-2026.2-py2.py3-none-any.whl (349 kB)
+Using cached webcolors-25.10.0-py3-none-any.whl (14 kB)
+Using cached webencodings-0.5.1-py2.py3-none-any.whl (11 kB)
+Using cached websocket_client-1.9.0-py3-none-any.whl (82 kB)
+Using cached argon2_cffi_bindings-25.1.0-cp39-abi3-win_amd64.whl (31 kB)
+Using cached cffi-2.0.0-cp310-cp310-win_amd64.whl (182 kB)
+Downloading beautifulsoup4-4.15.0-py3-none-any.whl (109 kB)
+Downloading soupsieve-2.8.4-py3-none-any.whl (37 kB)
+Using cached colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Downloading decorator-5.3.1-py3-none-any.whl (10 kB)
+Using cached defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+Using cached fqdn-1.5.1-py3-none-any.whl (9.1 kB)
+Using cached isoduration-20.11.0-py3-none-any.whl (11 kB)
+Using cached arrow-1.4.0-py3-none-any.whl (68 kB)
+Using cached jupyterlab_pygments-0.3.0-py3-none-any.whl (15 kB)
+Downloading playwright-1.60.0-py3-none-win_amd64.whl (37.9 MB)
+   ---------------------------------------- 37.9/37.9 MB 24.3 MB/s  0:00:01
+Downloading greenlet-3.5.1-cp310-cp310-win_amd64.whl (237 kB)
+Downloading pyee-13.0.1-py3-none-any.whl (15 kB)
+Using cached pycparser-3.0-py3-none-any.whl (48 kB)
+Using cached rfc3339_validator-0.1.4-py2.py3-none-any.whl (3.5 kB)
+Using cached stack_data-0.6.3-py3-none-any.whl (24 kB)
+Using cached asttokens-3.0.1-py3-none-any.whl (27 kB)
+Using cached executing-2.2.1-py2.py3-none-any.whl (28 kB)
+Using cached pure_eval-0.2.3-py3-none-any.whl (11 kB)
+Using cached uri_template-1.3.0-py3-none-any.whl (11 kB)
+Downloading wcwidth-0.8.1-py3-none-any.whl (323 kB)
+Installing collected packages: webencodings, pytz, pure-eval, fastjsonschema, widgetsnbextension, websocket-client, webcolors, wcwidth, urllib3, uri-template, tzdata, typing-extensions, traitlets, tornado, tomli, tinycss2, threadpoolctl, soupsieve, six, send2trash, rpds-py, rfc3986-validator, pyzmq, pyyaml, pywinpty, python-json-logger, pyparsing, pygments, pycparser, psutil, prometheus-client, platformdirs, pillow, parso, pandocfilters, packaging, overrides, numpy, nest-asyncio2, markupsafe, lark, kiwisolver, jupyterlab_widgets, jupyterlab-pygments, jsonpointer, json5, joblib, idna, h11, greenlet, fqdn, fonttools, executing, defusedxml, decorator, debugpy, cycler, comm, colorama, charset_normalizer, certifi, bleach, babel, attrs, asttokens, terminado, stack_data, scipy, rfc3987-syntax, rfc3339-validator, requests, referencing, python-dateutil, pyee, prompt_toolkit, mistune, matplotlib-inline, jupyter-core, jinja2, jedi, imageio, httpcore, exceptiongroup, contourpy, cffi, beautifulsoup4, async-lru, scikit-learn, playwright, pandas, matplotlib, jupyter-server-terminals, jupyter-client, jsonschema-specifications, ipython, arrow, argon2-cffi-bindings, anyio, jsonschema, isoduration, ipywidgets, ipykernel, httpx, argon2-cffi, nbformat, nbclient, jupyter-events, nbconvert, jupyter-server, notebook-shim, jupyterlab-server, jupyter-lsp, jupyterlab
+Successfully installed anyio-4.13.0 argon2-cffi-25.1.0 argon2-cffi-bindings-25.1.0 arrow-1.4.0 asttokens-3.0.1 async-lru-2.3.0 attrs-26.1.0 babel-2.18.0 beautifulsoup4-4.15.0 bleach-6.4.0 certifi-2026.5.20 cffi-2.0.0 charset_normalizer-3.4.7 colorama-0.4.6 comm-0.2.3 contourpy-1.3.2 cycler-0.12.1 debugpy-1.8.21 decorator-5.3.1 defusedxml-0.7.1 exceptiongroup-1.3.1 executing-2.2.1 fastjsonschema-2.21.2 fonttools-4.63.0 fqdn-1.5.1 greenlet-3.5.1 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.18 imageio-2.37.3 ipykernel-7.3.0 ipython-8.39.0 ipywidgets-8.1.8 isoduration-20.11.0 jedi-0.20.0 jinja2-3.1.6 joblib-1.5.3 json5-0.14.0 jsonpointer-3.1.1 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 jupyter-client-8.9.1 jupyter-core-5.9.1 jupyter-events-0.12.1 jupyter-lsp-2.3.1 jupyter-server-2.19.0 jupyter-server-terminals-0.5.4 jupyterlab-4.5.8 jupyterlab-pygments-0.3.0 jupyterlab-server-2.28.0 jupyterlab_widgets-3.0.16 kiwisolver-1.5.0 lark-1.3.1 markupsafe-3.0.3 matplotlib-3.10.9 matplotlib-inline-0.2.2 mistune-3.2.1 nbclient-0.11.0 nbconvert-7.17.1 nbformat-5.10.4 nest-asyncio2-1.7.2 notebook-shim-0.2.4 numpy-2.2.6 overrides-7.7.0 packaging-26.2 pandas-2.3.3 pandocfilters-1.5.1 parso-0.8.7 pillow-12.2.0 platformdirs-4.10.0 playwright-1.60.0 prometheus-client-0.25.0 prompt_toolkit-3.0.52 psutil-7.2.2 pure-eval-0.2.3 pycparser-3.0 pyee-13.0.1 pygments-2.20.0 pyparsing-3.3.2 python-dateutil-2.9.0.post0 python-json-logger-4.1.0 pytz-2026.2 pywinpty-3.0.5 pyyaml-6.0.3 pyzmq-27.1.0 referencing-0.37.0 requests-2.34.2 rfc3339-validator-0.1.4 rfc3986-validator-0.1.1 rfc3987-syntax-1.1.0 rpds-py-0.30.0 scikit-learn-1.7.2 scipy-1.15.3 send2trash-2.1.0 six-1.17.0 soupsieve-2.8.4 stack_data-0.6.3 terminado-0.18.1 threadpoolctl-3.6.0 tinycss2-1.5.1 tomli-2.4.1 tornado-6.5.7 traitlets-5.15.1 typing-extensions-4.15.0 tzdata-2026.2 uri-template-1.3.0 urllib3-2.7.0 wcwidth-0.8.1 webcolors-25.10.0 webencodings-0.5.1 websocket-client-1.9.0 widgetsnbextension-4.0.15
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> pip freeze > reproducibility_windows_initial.txt
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> python -m ipykernel install --user `
+>> --name mmjl-test `
+>> --display-name "Python (MMJL Test)"
+Installed kernelspec mmjl-test in C:\Users\Anast\AppData\Roaming\jupyter\kernels\mmjl-test
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> python -VVV
+Python 3.10.11 | packaged by Anaconda, Inc. | (main, May 16 2023, 00:55:32) [MSC v.1916 64 bit (AMD64)]
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> #  Okay, modern Python
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> #  Make package importable, even with
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> #+ lean-to implementation (no pkg)
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> $src_path = Join-Path (Get-Location) "src"
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> $path_sep = [System.IO.Path]::PathSeparator
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> if ($env:PYTHONPATH) {
+>>   $env.PYTHONPATH = "$env:PYTHONPATH$path_sep$src_path"
+>> } else {
+>>   $env.PYTHONPATH = "$src_path"
+>> }
+The property 'PYTHONPATH' cannot be found on this object. Verify that the property exists and can be set.
+At line:4 char:3
++   $env.PYTHONPATH = "$src_path"
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : PropertyNotFound
+
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> Get-ExecutionPolicy -List
+
+        Scope ExecutionPolicy
+        ----- ---------------
+MachinePolicy       Undefined
+   UserPolicy       Undefined
+      Process          Bypass
+  CurrentUser       Undefined
+ LocalMachine      Restricted
+
+
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> Get-ExecutionPolicy
+Bypass
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> $env.PYTHONPATH
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> if ($env:PYTHONPATH) {
+>>   $env:PYTHONPATH = "$env:PYTHONPATH$path_sep$src_path"
+>> } else {
+>>   $env:PYTHONPATH = "$src_path"
+>> }
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> $env:PYTHONPATH
+C:\David\my_repos_dwb\multimodal-jupy-logger\src
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> python -c "from multimodal_jupy_logger import MultimodalJupyLogger; print(MultimodalJupyLogger)"
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger\__init__.py", line 5, in <module>
+    from multimodal_jupy_logger.logger import MultimodalJupyLogger
+  File "C:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger\logger.py", line 13, in <module>
+    from multimodal_jupy_logger.metadata import build_log_header, jupy_stamp
+ImportError: cannot import name 'build_log_header' from 'multimodal_jupy_logger.metadata' (C:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger\metadata.py)
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> Get-Content metadata.py
+Get-Content : Cannot find path 'C:\David\my_repos_dwb\multimodal-jupy-logger\metadata.py' because it does not exist.
+At line:1 char:1
++ Get-Content metadata.py
++ ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\David\my_rep...ger\metadata.py:String) [Get-Content], ItemNotFoundEx
+   ception
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand
+
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> Get-Content .\src\multimodal_jupy_logger\metadata.py
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> #  Oops, didn't get this one written.
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> (Get-Item .\src\multimodal_jupy_logger\metadata.py).Length
+2217
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger>
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> python -c "from multimodal_jupy_logger import MultimodalJupyLogger; print(MultimodalJupyLogger)"
+<class 'multimodal_jupy_logger.logger.MultimodalJupyLogger'>
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> python -m multimodal_jupy_logger.mmjl_cli --help
+usage: mmjl_cli.py [-h] [--root ROOT] {html,markdown,log-file,inspect,validate} ...
+
+Multimodal Jupy Logger command interface.
+
+positional arguments:
+  {html,markdown,log-file,inspect,validate}
+    html                Build HTML timeline from the manifest.
+    markdown            Build Markdown timeline from the manifest.
+    log-file            Log one or more existing files as MMJL artifacts.
+    inspect             Print a basic manifest summary.
+    validate            Check that manifest artifact paths exist.
+
+options:
+  -h, --help            show this help message and exit
+  --root ROOT           MMJL root logging directory.
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> python -m multimodal_jupy_logger.mmjl_cli inspect
+Manifest: C:\David\my_repos_dwb\multimodal-jupy-logger\jupy_log\manifest.tsv
+Root: C:\David\my_repos_dwb\multimodal-jupy-logger\jupy_log
+Artifacts: C:\David\my_repos_dwb\multimodal-jupy-logger\jupy_log\artifacts
+Rows: 0
+
+By kind:
+
+By MIME:
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> python -m multimodal_jupy_logger.mmjl_cli validate
+Manifest: C:\David\my_repos_dwb\multimodal-jupy-logger\jupy_log\manifest.tsv
+Rows checked: 0
+Missing artifacts: 0
+(.venv_test_mmjl) (base) PS C:\David\my_repos_dwb\multimodal-jupy-logger> jupyter lab
