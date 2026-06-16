@@ -35,9 +35,25 @@ MIME_INFO = {
     
     "text/plain": ("text", "txt"),
     "text/markdown": ("text", "md"),
+    "text/x-python": ("text", "py"),
     "text/html": ("html", "html"),
     "application/json": ("json", "json"),
 }
+
+
+MANIFEST_COLUMNS = [
+    "artifact_sequence",
+    "capture_sequence",
+    "timestamp",
+    "kind",
+    "mime",
+    "role",
+    "label",
+    "path",
+]
+
+MANIFEST_HEADER = "\t".join(MANIFEST_COLUMNS)
+SEQUENCE_WIDTH = 6
 
 
 def safe_label(label: str) -> str:
@@ -137,39 +153,188 @@ class MultimodalJupyLogger:
     self.manifest = self.root / "manifest.tsv"
     
     self.artifacts.mkdir(parents=True, exist_ok=True)
+    self._ensure_manifest_schema()
+  ##endof:  __init__(...)
+  
+  
+  
+  def _ensure_manifest_schema(self) -> None:
+    '''
+    Create the manifest or migrate the original five-column schema.
+
+    Existing rows are preserved. Legacy rows receive monotonically
+    assigned artifact sequences, a blank capture sequence, and role
+    ``legacy``.
+    '''
+    
+    legacy_columns = [
+        "timestamp",
+        "kind",
+        "mime",
+        "label",
+        "path",
+    ]
+    lines = []
+    old_header = []
+    out_lines = []
+    values = []
+    row = {}
     
     if not self.manifest.exists():
       self.manifest.write_text(
-          "timestamp\tkind\tmime\tlabel\tpath\n",
+          f"{MANIFEST_HEADER}\n",
           encoding="utf-8",
       )
+      return
     ##endof:  if not self.manifest.exists()
-  ##endof:  __init__(...)
+    
+    lines = self.manifest.read_text(
+        encoding="utf-8"
+    ).splitlines()
+    
+    if not lines:
+      self.manifest.write_text(
+          f"{MANIFEST_HEADER}\n",
+          encoding="utf-8",
+      )
+      return
+    ##endof:  if not lines
+    
+    old_header = lines[0].split("\t")
+    
+    if old_header == MANIFEST_COLUMNS:
+      return
+    ##endof:  if old_header == MANIFEST_COLUMNS
+    
+    if old_header != legacy_columns:
+      raise RuntimeError(
+          "Unsupported manifest schema: "
+          f"{self.manifest} has columns {old_header!r}."
+      )
+    ##endof:  if old_header != legacy_columns
+    
+    out_lines = [MANIFEST_HEADER]
+    
+    for artifact_sequence, line in enumerate(lines[1:], start=1):
+      if not line.strip():
+        continue
+      ##endof:  if not line.strip()
+      
+      values = line.split("\t")
+      row = dict(zip(legacy_columns, values))
+      out_lines.append(
+          "\t".join([
+              f"{artifact_sequence:0{SEQUENCE_WIDTH}d}",
+              "",
+              row.get("timestamp", ""),
+              row.get("kind", ""),
+              row.get("mime", ""),
+              "legacy",
+              row.get("label", ""),
+              row.get("path", ""),
+          ])
+      )
+    ##endof:  for artifact_sequence, line in enumerate(...)
+    
+    self.manifest.write_text(
+        "\n".join(out_lines) + "\n",
+        encoding="utf-8",
+    )
+  ##endof:  _ensure_manifest_schema()
+  
+  
+  
+  def _next_sequence(self, column_name: str) -> int:
+    '''
+    Return one greater than the largest numeric sequence in a column.
+
+    Reading from the manifest on allocation keeps the counter persistent
+    across kernel restarts and separate logger instances using one root.
+    '''
+    
+    max_sequence = 0
+    raw_value = ""
+    rows = []
+    
+    rows = self.read_manifest_rows()
+    
+    for row in rows:
+      raw_value = row.get(column_name, "").strip()
+      
+      if not raw_value:
+        continue
+      ##endof:  if not raw_value
+      
+      try:
+        max_sequence = max(max_sequence, int(raw_value))
+      except ValueError:
+        continue
+      ##endof:  try/except ValueError
+    ##endof:  for row in rows
+    
+    return max_sequence + 1
+  ##endof:  _next_sequence(...)
+  
+  
+  
+  def next_artifact_sequence(self) -> int:
+    '''Return the next persistent artifact sequence.'''
+    
+    return self._next_sequence("artifact_sequence")
+  ##endof:  next_artifact_sequence()
+  
+  
+  
+  def next_capture_sequence(self) -> int:
+    '''Return the next persistent capture-group sequence.'''
+    
+    return self._next_sequence("capture_sequence")
+  ##endof:  next_capture_sequence()
   
   
   
   def append(
         self,
+        artifact_sequence: int,
+        capture_sequence: int | None,
         stamp: str,
         kind: str,
         mime: str,
+        role: str,
         label: str,
         path: str | Path,
       ) -> None:
     '''
-    Append one row to the manifest.
+    Append one artifact row to the manifest.
 
-    @TODO  Store paths relative to the log root for portability.
-    @TODO  Escape or reject tabs/newlines in manifest fields.
+    Artifact sequence is authoritative within one log root. Capture
+    sequence groups artifacts produced by one ``%%jupy_capture`` run.
     '''
     
     clean_label = ""
+    clean_role = ""
+    capture_text = ""
     
     clean_label = str(label).replace("\t", " ").replace("\n", " ")
+    clean_role = str(role).replace("\t", " ").replace("\n", " ")
+    
+    if capture_sequence is not None:
+      capture_text = f"{capture_sequence:0{SEQUENCE_WIDTH}d}"
+    ##endof:  if capture_sequence is not None
     
     with self.manifest.open("a", encoding="utf-8") as handle:
       handle.write(
-          f"{stamp}\t{kind}\t{mime}\t{clean_label}\t{path}\n"
+          "\t".join([
+              f"{artifact_sequence:0{SEQUENCE_WIDTH}d}",
+              capture_text,
+              stamp,
+              kind,
+              mime,
+              clean_role,
+              clean_label,
+              str(path),
+          ])
+          + "\n"
       )
     ##endof:  with self.manifest.open(...)
   ##endof:  append(...)
@@ -181,11 +346,15 @@ class MultimodalJupyLogger:
         data: bytes,
         label: str = "artifact",
         mime: str | None = None,
+        capture_sequence: int | None = None,
+        role: str = "artifact",
+        announce: bool = True,
       ) -> Path:
     '''
     Log bytes as a detected or explicitly supplied MIME artifact.
     '''
     
+    artifact_sequence = 0
     kind = ""
     suffix = ""
     stamp = ""
@@ -198,15 +367,31 @@ class MultimodalJupyLogger:
       raise ValueError(f"Unsupported or undetected MIME type: {mime}")
     ##endof:  if mime not in MIME_INFO
     
+    artifact_sequence = self.next_artifact_sequence()
     kind, suffix = MIME_INFO[mime]
     stamp = jupy_stamp()
     clean_label = safe_label(label)
-    path = self.artifacts / f"{stamp}_{clean_label}.{suffix}"
+    path = self.artifacts / (
+        f"{artifact_sequence:0{SEQUENCE_WIDTH}d}_"
+        f"{stamp}_{clean_label}.{suffix}"
+    )
     
     path.write_bytes(data)
-    self.append(stamp, kind, mime, label, path)
+    self.append(
+        artifact_sequence=artifact_sequence,
+        capture_sequence=capture_sequence,
+        stamp=stamp,
+        kind=kind,
+        mime=mime,
+        role=role,
+        label=label,
+        path=path,
+    )
     
-    print(f"[DONE] Logged {kind}: {path}")
+    if announce:
+      print(f"[DONE] Logged {kind}: {path}")
+    ##endof:  if announce
+    
     return path
   ##endof:  log_bytes(...)
   
@@ -217,11 +402,15 @@ class MultimodalJupyLogger:
         text: str,
         label: str = "text",
         mime: str = "text/plain",
+        capture_sequence: int | None = None,
+        role: str = "literal",
+        announce: bool = True,
       ) -> Path:
     '''
-    Log text, Markdown, HTML, or JSON-like text.
+    Log text, source code, Markdown, HTML, or JSON-like text.
     '''
     
+    artifact_sequence = 0
     kind = ""
     suffix = ""
     stamp = ""
@@ -232,15 +421,31 @@ class MultimodalJupyLogger:
       raise ValueError(f"Unsupported text MIME type: {mime}")
     ##endof:  if mime not in MIME_INFO
     
+    artifact_sequence = self.next_artifact_sequence()
     kind, suffix = MIME_INFO[mime]
     stamp = jupy_stamp()
     clean_label = safe_label(label)
-    path = self.artifacts / f"{stamp}_{clean_label}.{suffix}"
+    path = self.artifacts / (
+        f"{artifact_sequence:0{SEQUENCE_WIDTH}d}_"
+        f"{stamp}_{clean_label}.{suffix}"
+    )
     
     path.write_text(str(text), encoding="utf-8")
-    self.append(stamp, kind, mime, label, path)
+    self.append(
+        artifact_sequence=artifact_sequence,
+        capture_sequence=capture_sequence,
+        stamp=stamp,
+        kind=kind,
+        mime=mime,
+        role=role,
+        label=label,
+        path=path,
+    )
     
-    print(f"[DONE] Logged text: {path}")
+    if announce:
+      print(f"[DONE] Logged text: {path}")
+    ##endof:  if announce
+    
     return path
   ##endof:  log_text(...)
   
@@ -251,6 +456,9 @@ class MultimodalJupyLogger:
         src_path: str | Path,
         label: str = "artifact",
         mime: str | None = None,
+        capture_sequence: int | None = None,
+        role: str = "file",
+        announce: bool = True,
       ) -> Path:
     '''
     Log an existing file.
@@ -265,7 +473,14 @@ class MultimodalJupyLogger:
     path = Path(src_path).expanduser().resolve()
     data = path.read_bytes()
     
-    return self.log_bytes(data, label=label, mime=mime)
+    return self.log_bytes(
+        data,
+        label=label,
+        mime=mime,
+        capture_sequence=capture_sequence,
+        role=role,
+        announce=announce,
+    )
   ##endof:  log_file(...)
   
   
@@ -274,12 +489,15 @@ class MultimodalJupyLogger:
         self,
         bundle: dict,
         label: str = "bundle",
+        capture_sequence: int | None = None,
+        role: str = "display",
+        announce: bool = True,
       ) -> list[Path]:
     '''
     Log supported items from an IPython MIME bundle.
 
-    @TODO  Handle more IPython display object variants.
-    @TODO  Preserve display ordering and execution metadata.
+    All supported representations are retained for provenance. A later
+    presentation layer may choose preferred representations.
     '''
     
     out_paths = []
@@ -309,6 +527,9 @@ class MultimodalJupyLogger:
                 payload_text,
                 item_label,
                 mime=mime,
+                capture_sequence=capture_sequence,
+                role=role,
+                announce=False,
             )
         )
       
@@ -318,6 +539,9 @@ class MultimodalJupyLogger:
                 payload,
                 item_label,
                 mime=mime,
+                capture_sequence=capture_sequence,
+                role=role,
+                announce=False,
             )
         )
       
@@ -333,12 +557,18 @@ class MultimodalJupyLogger:
                 payload_bytes,
                 item_label,
                 mime=mime,
+                capture_sequence=capture_sequence,
+                role=role,
+                announce=False,
             )
         )
       ##endof:  if mime.startswith("text/") ...
     ##endof:  for idx, (mime, payload) in enumerate(...)
     
-    print(f"[DONE] Logged {len(out_paths)} MIME item(s).")
+    if announce:
+      print(f"[DONE] Logged {len(out_paths)} MIME item(s).")
+    ##endof:  if announce
+    
     return out_paths
   ##endof:  log_mime_bundle(...)
   

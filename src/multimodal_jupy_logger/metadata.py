@@ -12,21 +12,29 @@ from datetime import datetime
 
 def jupy_stamp() -> str:
   '''
-  Return a filesystem-safe timestamp.
+  Return a filesystem-safe timestamp with Unix epoch milliseconds.
 
-  This is the Python equivalent of:
+  Example:
 
-    date +'%s_%Y-%m-%dT%H%M%S%z'
+    1781604242123_2026-06-16T095402123-0400
+
+  The leading epoch-millisecond value is useful for machine ordering.
+  The local timestamp is useful for human inspection.
   '''
   
+  epoch_milliseconds = 0
+  local_timestamp = ""
   now = None
   stamp = ""
   
   now = datetime.now().astimezone()
-  stamp = (
-      f"{int(now.timestamp())}_"
-      f"{now.strftime('%Y-%m-%dT%H%M%S%z')}"
+  epoch_milliseconds = int(now.timestamp() * 1000)
+  local_timestamp = (
+      f"{now.strftime('%Y-%m-%dT%H%M%S')}"
+      f"{now.microsecond // 1000:03d}"
+      f"{now.strftime('%z')}"
   )
+  stamp = f"{epoch_milliseconds}_{local_timestamp}"
   
   return stamp
 ##endof:  jupy_stamp()
