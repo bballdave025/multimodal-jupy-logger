@@ -64,9 +64,9 @@ subsequent B and A should succeed.
 import importlib
 import os
 import sys
-from pathlib import Path
+import pathlib
 
-starting_dir = Path.cwd().resolve()
+starting_dir = pathlib.Path.cwd().resolve()
 repo_root = None
 src_path = None
 package_path = None
@@ -104,7 +104,7 @@ importlib.invalidate_caches()
 print("starting_dir:", starting_dir)
 print("repo_root:", repo_root)
 print("src_path:", src_path)
-print("current working directory:", Path.cwd())
+print("current working directory:", pathlib.Path.cwd())
 print("Python executable:", sys.executable)
 ```
 
@@ -376,8 +376,6 @@ print("A and B should now fail on their first executions.")
 
 ```python
 %%jupy_capture --label abc-first-pass-a
-import matplotlib.pyplot as plt
-
 avg_value = sum(squared_numbers) / len(squared_numbers)
 
 fig, ax = plt.subplots(figsize=(8, 4))
@@ -437,7 +435,7 @@ NameError involving numbers
 
 ## 17. Code cell — C: expected success
 
-I added the imports and random numbers rather than arbitrary ones.
+I added the imports and random numbers rather than hard-coded numbers. --DWB
 
 ```python
 %%jupy_capture --label abc-cell-c
@@ -797,7 +795,7 @@ sequences_are_unique = (
 )
 
 filenames_have_sequence_prefixes = all(
-    Path(row["path"]).name.startswith(
+    pathlib.Path(row["path"]).name.startswith(
         f"{int(row['artifact_sequence']):06d}_"
     )
     for row in final_rows
