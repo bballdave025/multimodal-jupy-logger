@@ -20,7 +20,46 @@ Individual functions may also be imported through the utils package:
 
 from __future__ import annotations
 
+#import sys
+#import io
 import pathlib
+#import contextlib
+
+#  New (sys, io, contextlib) imports not used yet here, but setting up 
+#+ up scaffolding for something like:
+#+
+#+
+#+     # 1. Create an in-memory text stream buffer
+#+     buffer = io.StringIO()
+#+
+#+     # 2. Temporarily redirect all print statements 
+#+     #+   inside tree() to our buffer
+#+     with contextlib.redirect_stdout(buffer):
+#+       tree(".")  # Runs normally, but prints nothing to the screen
+#+     ##endof:  with
+#+     # 3. Extract the full string content from the buffer
+#+     tree_output_string = buffer.getvalue()
+#+
+#+     # 4. Perform line-by-line grep filter
+#+     grep_results = [
+#+         line 
+#+         for line in tree_output_string.splitlines() 
+#+         if "abc-" in line and "-pass-b-" in line
+#+     ]
+#+
+#+     print(grep_results)
+#
+#
+#  Looked at a similar solution, adding another parameter to the
+#+ tree function itself:
+#+
+#+
+#+        file=sys.stdout,
+#+    ) -> None:
+#+
+#+    #  Now, inside the tree functions, I would just need to make
+#+    #+ that all print statements look something like:
+#+    #+     print(that_string, file=file)
 
 
 def _path_part_has_match(
@@ -113,6 +152,7 @@ def tree(
       indent_length: int = 4,
       dirs_to_exclude: list[str] | None = None,
       files_to_exclude: list[str] | None = None,
+#     file=std.out, #can add this & make sure all  print(s,file=file)
     ) -> None:
   '''
   Print a quick tree-style representation of a directory.
