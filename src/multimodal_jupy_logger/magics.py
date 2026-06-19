@@ -52,7 +52,7 @@ class MultimodalJupyLoggerMagics(Magics):
         cell: str | None,
         magic_name: str,
         force_display: bool | None = None,
-      ):
+      ) -> None:
     '''
     Log Python input, execute it, capture outputs, and optionally replay.
 
@@ -213,7 +213,10 @@ class MultimodalJupyLoggerMagics(Magics):
       )
     ##endof:  if error is not None
     
-    return execution_result
+    #just puts an object descriiption on screen#return execution_result
+    # We choose
+    return None
+    
   ##endof:  _capture_and_execute(...)
   
   
@@ -284,12 +287,17 @@ class MultimodalJupyLoggerMagics(Magics):
     parser.add_argument("--mime", default="text/plain")
     args = parser.parse_args(shlex.split(line))
     
-    return self.logger.log_text(
+    self.logger.log_text(
         cell or "",
         args.label,
         mime=args.mime,
         role="literal",
     )
+    
+    #  Returning the self.logger.log_text(...) would clog up the
+    #+ Jupyter display with something like 'WindowsPath(...)'
+    #+ So we choose to...
+    return None
   ##endof:  jupy_log(...)
   
   

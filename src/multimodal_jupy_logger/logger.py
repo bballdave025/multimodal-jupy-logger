@@ -150,9 +150,14 @@ class MultimodalJupyLogger:
   def __init__(self, root: str | Path = "jupy_log"):
     self.root = Path(root).expanduser().resolve()
     self.artifacts = self.root / "artifacts"
+    self.staging = self.root / "staging"
+    self.staging_dir = self.staging
+    self.timelines = self.root / "timelines"
     self.manifest = self.root / "manifest.tsv"
     
     self.artifacts.mkdir(parents=True, exist_ok=True)
+    self.staging.mkdir(parents=True, exist_ok=True)
+    self.timelines.mkdir(parents=True, exist_ok=True)
     self._ensure_manifest_schema()
   ##endof:  __init__(...)
   
@@ -471,6 +476,24 @@ class MultimodalJupyLogger:
     path = None
     
     path = Path(src_path).expanduser().resolve()
+
+    if not path.exists():
+      raise FileNotFoundError(
+          "MMJL cannot log the requested file because it "
+          "does not exist.\n"
+          f"Input path: {src_path}\n"
+          f"Resolved path: {path}\n"
+          f"Current working directory: {Path.cwd()}"
+      )
+    ##endof:  if not path.exists()
+
+    if not path.is_file():
+      raise IsADirectoryError(
+          "MMJL expected a file, but the resolved path is "
+          f"not a file: {path}"
+      )
+    ##endof:  if not path.is_file()
+
     data = path.read_bytes()
     
     return self.log_bytes(
@@ -641,6 +664,8 @@ class MultimodalJupyLogger:
     print(f"Manifest: {self.manifest}")
     print(f"Root: {self.root}")
     print(f"Artifacts: {self.artifacts}")
+    print(f"Staging: {self.staging}")
+    print(f"Timelines: {self.timelines}")
     print(f"Rows: {len(rows)}")
     
     print("\nBy kind:")
@@ -706,7 +731,7 @@ class MultimodalJupyLogger:
     @TODO  Add richer styling.
     '''
     
-    out_path = Path(out_path or self.root / "timeline.html")
+    out_path = Path(out_path or self.timelines / "timeline.html")
     rows = self.read_manifest_rows()
     parts = []
     stamp = ""
@@ -802,7 +827,7 @@ class MultimodalJupyLogger:
     @TODO  Add frontmatter option.
     '''
     
-    out_path = Path(out_path or self.root / "timeline.md")
+    out_path = Path(out_path or self.timelines / "timeline.md")
     rows = self.read_manifest_rows()
     parts = []
     stamp = ""

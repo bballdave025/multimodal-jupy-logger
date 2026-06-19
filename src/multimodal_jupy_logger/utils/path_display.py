@@ -16,6 +16,27 @@ The module itself acts as the namespace. Typical use:
 Individual functions may also be imported through the utils package:
 
     from multimodal_jupy_logger.utils import tree
+
+@TODO 
+  Consider adding optional stream parameters to text-only display helpers: 
+  
+  
+      from typing import TextIO 
+      import sys 
+      
+      def tree(..., 
+            file: TextIO = sys.stdout
+          ) -> None: 
+        
+        print(line, file=file) 
+  
+  
+  This would allow callers to capture output with `io.StringIO` for
+  filtering, testing, or later logging. Alternative for one-off 
+  capture: use `contextlib.redirect_stdout(buffer)` around existing
+  print-based helpers. 
+  
+  Do not mix this into rich notebook display helpers yet; MMJL owns that richer display/capture path separately.
 '''
 
 from __future__ import annotations
@@ -152,7 +173,7 @@ def tree(
       indent_length: int = 4,
       dirs_to_exclude: list[str] | None = None,
       files_to_exclude: list[str] | None = None,
-#     file=std.out, #can add this & make sure all  print(s,file=file)
+#     file=sys.stdout, #can add this & make sure all  print(s,file=file)
     ) -> None:
   '''
   Print a quick tree-style representation of a directory.
