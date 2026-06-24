@@ -59,6 +59,9 @@ $~*
 ~$*
 ~WRL*
 ~*
+.DS_Store
+Thumbs.db
+*.swp
 
 # Local secrets/config
 .env
@@ -306,3 +309,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+## <<<<<<<<<<<<<< .gitignore template from GitHub, <<<<<<<<<<<<<<<<<<
+## <<<<<<<<<<<<<< about 2026-06-14                 <<<<<<<<<<<<<<<<<<
