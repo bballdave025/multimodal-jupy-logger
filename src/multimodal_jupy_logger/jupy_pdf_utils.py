@@ -40,7 +40,10 @@ import time
 import nbformat
 
 from IPython import get_ipython
-from IPython.core.magic import register_line_magic
+#replaced with below 3# #from IPython.core.magic import register_line_magic
+from IPython.core.magic import Magics
+from IPython.core.magic import magics_class
+from IPython.core.magic import line_magic
 from IPython.display import Javascript
 from IPython.display import display
 from nbconvert import WebPDFExporter
@@ -139,7 +142,9 @@ def export_notebook_to_pdf(
   Handles active-notebook resolution, optional frontend save,
   metadata header injection, and PDF rendering.
   '''
-
+  
+  
+  
   if not input_path:
     try:
       input_file = detect_active_notebook_path()
@@ -260,25 +265,71 @@ Begin COMPLETE NOTEBOOK backup (PDF)
 ##endof:  export_notebook_to_pdf()
 
 
-@register_line_magic
-def backup_pdf(line: str) -> None:
+@magics_class
+class JupyPdfMagics(Magics):
   '''
-  Jupyter line magic interface.
-
-  Usage:
-    %backup_pdf
-    %backup_pdf optional_output_name.pdf
+  IPython/Jupyter magic interface for notebook PDF backup.
   '''
 
-  active_notebook_name = "analysis.ipynb"
+  @line_magic
+  def backup_pdf(self, line: str) -> None:
+    '''
+    Jupyter line magic interface.
 
-  target_output = line.strip() if line.strip() else None
+    Usage:
+      %backup_pdf
+      %backup_pdf optional_output_name.pdf
+    '''
 
-  export_notebook_to_pdf(
-      input_path=active_notebook_name,
-      output_path=target_output,
+    target_output = line.strip() if line.strip() else None
+
+    export_notebook_to_pdf(
+        input_path=None,
+        output_path=target_output,
+    )
+  ##endof:  backup_pdf()
+##endof:  JupyPdfMagics
+
+
+def register_pdf_magics(ip=None) -> bool:
+  '''
+  Register PDF backup magics when an IPython shell is available.
+
+  Returns True if registration happened, False otherwise.
+  '''
+
+  if ip is None:
+    ip = get_ipython()
+  ##endof:  if ip is None
+
+  if ip is None:
+    return False
+  ##endof:  if ip is None
+
+  ip.register_magics(JupyPdfMagics)
+  
+  print(
+      (
+          "[DONE] Registered: %backup_pdf from the file,\n"
+          "         src/multimodal_jupy_logger/jupy_pdf_utils.py"
+      )
   )
-##endof:  backup_pdf()
+
+  return True
+##endof:  register_pdf_magics()
+
+
+def load_ipython_extension(ip) -> None:
+  '''
+  IPython extension hook.
+
+  Enables:
+
+    %load_ext multimodal_jupy_logger.jupy_pdf_utils
+  '''
+
+  register_pdf_magics(ip)
+##endof:  load_ipython_extension()
 
 
 def main() -> None:
