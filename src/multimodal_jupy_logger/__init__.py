@@ -3,7 +3,6 @@ Public package interface for Multimodal Jupy Logger.
 '''
 
 from .jupy_pdf_utils import (
-  backup_pdf,
   export_notebook_to_pdf,
 )
 from .logger import MultimodalJupyLogger
