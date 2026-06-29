@@ -32,6 +32,12 @@ test_outputs/
 # But let these in
 !assets/
 !*.log
+!examples/mmjl_capture_debugging_pre_-_all_but_pdf_success/
+!examples/mmjl_capture_debugging_pre_-_all_but_pdf_success/*.png
+!examples/mmjl_capture_debugging_pre_-_all_but_pdf_success/*.html
+!examples/mmjl_capture_debugging_pre_-_all_but_pdf_success/*.pdf
+!examples/mmjl_capture_debugging_pre_-_all_but_pdf_success/*.md
+!examples/mmjl_capture_debugging_pre_-_all_but_pdf_success/*.*
 
 # Build/package outputs
 build/

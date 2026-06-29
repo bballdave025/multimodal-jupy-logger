@@ -1,0 +1,329 @@
+<html>
+<body>
+<h1>Jupyter Log Timeline</h1>
+<pre>
+**Multimodal Jupy Logger HTML Timeline**
+
+This log file: D:\David\my_repos_dwb\multimodal-jupy-logger\jupy_log\timelines\timeline.html
+Timestamp: 1782766002605_2026-06-29T164642605-0400
+Machine, user, etc.: BLACK-MACHINE bball@BLACK-MACHINE
+
+---
+
+---
+
+---
+
+</pre>
+<hr>
+<h3>details-summary-markdown-regression</h3>
+<p><code>1782759815228_2026-06-29T150335228-0400</code> — text — text/markdown</p>
+<pre>&lt;details&gt;
+&lt;summary&gt;Click the arrow to reveal logged Markdown text&lt;/summary&gt;
+
+This content was logged as `text/markdown`.
+
+The regression question is whether exported timelines preserve this as
+renderable Markdown/HTML or incorrectly turn it into escaped or fenced
+source text.
+
+&lt;/details&gt;
+
+&lt;!-- ## 9. Code cell 08 — log the original Markdown regression case --&gt;
+&lt;!--   If I had left the python comment without the HTML comment,   --&gt;
+&lt;!-- + it would have rendered as an `h2`. But you might only see    --&gt;
+&lt;!-- + this in the dpypd.print_file version.                        --&gt;
+
+&lt;br/&gt;HTML comments above.&lt;br/&gt;Hopefully you can see the utility of jupy_log
+as a note-taking device.
+</pre>
+<hr>
+<h3>details-summary-html-control</h3>
+<p><code>1782759848405_2026-06-29T150408405-0400</code> — html — text/html</p>
+<details>
+<summary>Click the arrow to reveal logged HTML text</summary>
+
+<p>
+This content was logged as <code>text/html</code>. It should be inserted
+as HTML in the generated HTML timeline.
+</p>
+
+</details>
+
+## 10. Code cell 09 — log an HTML control version
+
+<!--   I can leave the python comment above as-is, since this is -->
+<!-- + HTML and not markdown. But you might only see this in the -->
+<!-- + dpypd.print_file version.                                 -->
+
+<br/>HTML comments above.<br/>Hopefully you can see the utility of jupy_log
+as a note-taking device.
+
+<hr>
+<h3>capture-basic-input</h3>
+<p><code>1782760095550_2026-06-29T150815550-0400</code> — text — text/x-python</p>
+<pre>message = &quot;This stdout should be displayed and logged.&quot;
+print(message)
+
+## 11. Code cell 14 — basic `%%jupy_capture` smoke test
+</pre>
+<hr>
+<h3>capture-basic-stdout</h3>
+<p><code>1782760095856_2026-06-29T150815856-0400</code> — text — text/plain</p>
+<pre>This stdout should be displayed and logged.
+</pre>
+<hr>
+<h3>tee-basic-input</h3>
+<p><code>1782760174892_2026-06-29T150934892-0400</code> — text — text/x-python</p>
+<pre>tee_message = &quot;The %%jupy_tee alias executed this cell.&quot;
+print(tee_message)
+
+tee_message.upper()
+
+## 12. Code cell 18 — basic `%%jupy_tee` alias test
+</pre>
+<hr>
+<h3>tee-basic-stdout</h3>
+<p><code>1782760174910_2026-06-29T150934910-0400</code> — text — text/plain</p>
+<pre>The %%jupy_tee alias executed this cell.
+</pre>
+<hr>
+<h3>tee-basic-display-01-01-text</h3>
+<p><code>1782760174921_2026-06-29T150934921-0400</code> — text — text/plain</p>
+<pre>&#x27;THE %%JUPY_TEE ALIAS EXECUTED THIS CELL.&#x27;</pre>
+<hr>
+<h3>abc-state-reset-input</h3>
+<p><code>1782760280557_2026-06-29T151120557-0400</code> — text — text/x-python</p>
+<pre>state_names = [
+    &quot;numbers&quot;,
+    &quot;squared_numbers&quot;,
+    &quot;avg_value&quot;,
+    &quot;fig&quot;,
+    &quot;ax&quot;,
+    &quot;plot_path&quot;,
+]
+
+removed_names = []
+
+for state_name in state_names:
+    if state_name in globals():
+        globals().pop(state_name)
+        removed_names.append(state_name)
+    ##endof:  if state_name in globals()
+##endof:  for state_name in state_names
+
+print(&quot;Removed prior state:&quot;, removed_names)
+print(&quot;A and B should now fail on their first executions.&quot;)
+
+## 14. Code cell 23 — reset hidden kernel state
+</pre>
+<hr>
+<h3>abc-state-reset-stdout</h3>
+<p><code>1782760280576_2026-06-29T151120576-0400</code> — text — text/plain</p>
+<pre>Removed prior state: []
+A and B should now fail on their first executions.
+</pre>
+<hr>
+<h3>abc-first-pass-a-input</h3>
+<p><code>1782760399754_2026-06-29T151319754-0400</code> — text — text/x-python</p>
+<pre>##done before# import matplotlib.plotly as plt
+##  P.S. Cell A does not import matplotlib here, because Cell C
+##+ will do it before we come back for the successful run of
+##+ already did. Same for numpy.
+##+ This is intentional notebook-state dependence for the A/B/C test.
+
+avg_value = squared_numbers.mean()
+
+fig, ax = plt.subplots(figsize=(8, 4))
+
+ax.plot(
+    numbers,
+    squared_numbers,
+    marker=&quot;o&quot;,
+)
+
+ax.axhline(
+    avg_value,
+    linestyle=&quot;--&quot;,
+    label=f&quot;mean squared value = {avg_value:.2f}&quot;,
+)
+
+ax.set_title(
+    &quot;Forwards-wrong / backwards-right notebook-state test&quot;
+)
+ax.set_xlabel(&quot;number&quot;)
+ax.set_ylabel(&quot;number squared&quot;)
+ax.grid(True)
+ax.legend()
+
+plot_path = (
+    repo_root
+    / &quot;jupy_log&quot;
+    / &quot;staging&quot;
+    / &quot;abc_backwards_right.png&quot;
+)
+
+plt.savefig(plot_path, dpi=150, bbox_inches=&quot;tight&quot;)
+print(&quot;saved explicit plot file:&quot;, plot_path)
+print(&quot;explicit plot exists:&quot;, plot_path.exists())
+
+plt.show()
+
+## 15. Code cell         27 — A, 1st execution: expected failure
+#
+## and
+#
+## 20. Code cell (still) 27 — A, 2nd execution: expected success and plot capture
+##     call it Code Cell 27|43
+</pre>
+<hr>
+<h3>abc-first-pass-a-exception</h3>
+<p><code>1782760400224_2026-06-29T151320224-0400</code> — text — text/plain</p>
+<pre>Traceback (most recent call last):
+  File &quot;D:\David\my_repos_dwb\multimodal-jupy-logger\.venv_mmjl_test\Lib\site-packages\IPython\core\interactiveshell.py&quot;, line 3748, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;C:\Users\bball\AppData\Local\Temp\ipykernel_13164\2702192110.py&quot;, line 7, in &lt;module&gt;
+    avg_value = squared_numbers.mean()
+                ^^^^^^^^^^^^^^^
+NameError: name &#x27;squared_numbers&#x27; is not defined
+</pre>
+<hr>
+<h3>abc-first-pass-b-input</h3>
+<p><code>1782760985810_2026-06-29T152305810-0400</code> — text — text/x-python</p>
+<pre>squared_numbers = numbers ** 2
+
+print(&quot;squared_numbers:&quot;, squared_numbers)
+
+## 16. Code cell         32 — B, first execution: expected failure
+#
+## and
+#
+## 18. Code cell (still) 32 — B, second execution: expected success
+##     call it Code cell 32|40
+</pre>
+<hr>
+<h3>abc-first-pass-b-exception</h3>
+<p><code>1782760985837_2026-06-29T152305837-0400</code> — text — text/plain</p>
+<pre>Traceback (most recent call last):
+  File &quot;D:\David\my_repos_dwb\multimodal-jupy-logger\.venv_mmjl_test\Lib\site-packages\IPython\core\interactiveshell.py&quot;, line 3748, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;C:\Users\bball\AppData\Local\Temp\ipykernel_13164\2522802886.py&quot;, line 1, in &lt;module&gt;
+    squared_numbers = numbers ** 2
+                      ^^^^^^^
+NameError: name &#x27;numbers&#x27; is not defined. Did you forget to import &#x27;numbers&#x27;?
+</pre>
+<hr>
+<h3>abc-cell-c-input</h3>
+<p><code>1782761483982_2026-06-29T153123982-0400</code> — text — text/x-python</p>
+<pre>import numpy as np
+import matplotlib.pyplot as plt
+
+## Older global-random-state style, like MLU
+# numbers = np.random.randint(1, 11, size=10)
+
+rng = np.random.default_rng()
+numbers = rng.integers(1, 11, size=10)
+
+print(&quot;numbers:&quot;, numbers)
+
+## 17. Code cell 36 — C: expected success
+</pre>
+<hr>
+<h3>abc-cell-c-stdout</h3>
+<p><code>1782761484600_2026-06-29T153124600-0400</code> — text — text/plain</p>
+<pre>numbers: [ 2  2  4 10  1 10  9  9  9  4]
+</pre>
+<hr>
+<h3>abc-second-pass-b-input</h3>
+<p><code>1782761684196_2026-06-29T153444196-0400</code> — text — text/x-python</p>
+<pre>squared_numbers = numbers ** 2
+
+print(&quot;squared_numbers:&quot;, squared_numbers)
+
+## 16. Code cell         32 — B, first execution: expected failure
+#
+## and
+#
+## 18. Code cell (still) 32 — B, second execution: expected success
+##     call it Code cell 32|40
+</pre>
+<hr>
+<h3>abc-second-pass-b-stdout</h3>
+<p><code>1782761684212_2026-06-29T153444212-0400</code> — text — text/plain</p>
+<pre>squared_numbers: [  4   4  16 100   1 100  81  81  81  16]
+</pre>
+<hr>
+<h3>abc-second-pass-a-input</h3>
+<p><code>1782762473892_2026-06-29T154753892-0400</code> — text — text/x-python</p>
+<pre>##done before# import matplotlib.plotly as plt
+##  P.S. Cell A does not import matplotlib here, because Cell C
+##+ will do it before we come back for the successful run of
+##+ already did. Same for numpy.
+##+ This is intentional notebook-state dependence for the A/B/C test.
+
+avg_value = squared_numbers.mean()
+
+fig, ax = plt.subplots(figsize=(8, 4))
+
+ax.plot(
+    numbers,
+    squared_numbers,
+    marker=&quot;o&quot;,
+)
+
+ax.axhline(
+    avg_value,
+    linestyle=&quot;--&quot;,
+    label=f&quot;mean squared value = {avg_value:.2f}&quot;,
+)
+
+ax.set_title(
+    &quot;Forwards-wrong / backwards-right notebook-state test&quot;
+)
+ax.set_xlabel(&quot;number&quot;)
+ax.set_ylabel(&quot;number squared&quot;)
+ax.grid(True)
+ax.legend()
+
+plot_path = (
+    repo_root
+    / &quot;jupy_log&quot;
+    / &quot;staging&quot;
+    / &quot;abc_backwards_right.png&quot;
+)
+
+plt.savefig(plot_path, dpi=150, bbox_inches=&quot;tight&quot;)
+print(&quot;saved explicit plot file:&quot;, plot_path)
+print(&quot;explicit plot exists:&quot;, plot_path.exists())
+
+plt.show()
+
+## 15. Code cell         27 — A, 1st execution: expected failure
+#
+## and
+#
+## 20. Code cell (still) 27 — A, 2nd execution: expected success and plot capture
+##     call it Code Cell 27|44
+</pre>
+<hr>
+<h3>abc-second-pass-a-stdout</h3>
+<p><code>1782762474682_2026-06-29T154754682-0400</code> — text — text/plain</p>
+<pre>saved explicit plot file: D:\David\my_repos_dwb\multimodal-jupy-logger\jupy_log\staging\abc_backwards_right.png
+explicit plot exists: True
+</pre>
+<hr>
+<h3>abc-second-pass-a-display-01-01-text</h3>
+<p><code>1782762474692_2026-06-29T154754692-0400</code> — text — text/plain</p>
+<pre>&lt;Figure size 800x400 with 1 Axes&gt;</pre>
+<hr>
+<h3>abc-second-pass-a-display-01-02-image</h3>
+<p><code>1782762474700_2026-06-29T154754700-0400</code> — image — image/png</p>
+<img src="000021_1782762474700_2026-06-29T154754700-0400_abc-second-pass-a-display-01-02-image.png" style="max-width:100%; height:auto;">
+<hr>
+<h3>abc-explicit-plot-01</h3>
+<p><code>1782764942837_2026-06-29T162902837-0400</code> — image — image/png</p>
+<img src="000022_1782764942837_2026-06-29T162902837-0400_abc-explicit-plot-01.png" style="max-width:100%; height:auto;">
+</body>
+</html>

@@ -143,7 +143,7 @@ def export_notebook_to_pdf(
   metadata header injection, and PDF rendering.
   '''
   
-  
+  input_file = "default.ipynb"
   
   if not input_path:
     try:

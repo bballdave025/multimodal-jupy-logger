@@ -223,7 +223,9 @@ class MultimodalJupyLoggerMagics(Magics):
   
   @line_magic
   def jupy_save(self, line: str = ""):
-    '''Request a frontend notebook save.'''
+    '''
+    Request a frontend notebook save.
+    '''
     
     display(Javascript("""
     try {
@@ -244,7 +246,9 @@ class MultimodalJupyLoggerMagics(Magics):
   
   @line_magic
   def jupy_file(self, line: str = ""):
-    '''Log one or more existing files.'''
+    '''
+    Log one or more existing files.
+    '''
     
     parser = None
     args = None
@@ -270,14 +274,25 @@ class MultimodalJupyLoggerMagics(Magics):
       )
     ##endof:  for idx, raw_path in enumerate(args.paths, start=1)
     
+    # ##    # not going to #    ##return out
+    # #  Returning the   out   would clog up the
+    # #+ Jupyter display with something like '[WindowsPath(...)]'
+    # #+ So we choose to...
+    #return None
+    
+    #DWB 2026-06-29# Not very sure about this. kamMA?!?!
+    
     return out
+    
   ##endof:  jupy_file(...)
   
   
   
   @cell_magic
   def jupy_log(self, line: str = "", cell: str | None = None):
-    '''Log literal cell text without executing it.'''
+    '''
+    Log literal cell text without executing it.
+    '''
     
     parser = None
     args = None
@@ -308,7 +323,9 @@ class MultimodalJupyLoggerMagics(Magics):
         line: str = "",
         cell: str | None = None,
       ):
-    '''Execute a Python cell while logging input and captured outputs.'''
+    '''
+    Execute a Python cell while logging input and captured outputs.
+    '''
     
     return self._capture_and_execute(
         line=line,
@@ -325,7 +342,9 @@ class MultimodalJupyLoggerMagics(Magics):
         line: str = "",
         cell: str | None = None,
       ):
-    '''Visible-output alias for ``%%jupy_capture``.'''
+    '''
+    Visible-output alias for ``%%jupy_capture``.
+    '''
     
     return self._capture_and_execute(
         line=line,
@@ -339,7 +358,9 @@ class MultimodalJupyLoggerMagics(Magics):
   
   @line_magic
   def jupy_markdown(self, line: str = ""):
-    '''Build a Markdown timeline.'''
+    '''
+    Build a Markdown timeline.
+    '''
     
     out_path = None
     out_path = line.strip() or None
@@ -350,7 +371,9 @@ class MultimodalJupyLoggerMagics(Magics):
   
   @line_magic
   def jupy_html(self, line: str = ""):
-    '''Build an HTML timeline.'''
+    '''
+    Build an HTML timeline.
+    '''
     
     out_path = None
     out_path = line.strip() or None
@@ -361,7 +384,9 @@ class MultimodalJupyLoggerMagics(Magics):
   
   @line_magic
   def jupy_inspect(self, line: str = ""):
-    '''Print a manifest summary.'''
+    '''
+    Print a manifest summary.
+    '''
     
     return self.logger.inspect_manifest()
   ##endof:  jupy_inspect(...)
@@ -370,7 +395,9 @@ class MultimodalJupyLoggerMagics(Magics):
   
   @line_magic
   def jupy_validate(self, line: str = ""):
-    '''Validate that manifest paths exist.'''
+    '''
+    Validate that manifest paths exist.
+    '''
     
     return self.logger.validate_manifest()
   ##endof:  jupy_validate(...)
@@ -379,7 +406,9 @@ class MultimodalJupyLoggerMagics(Magics):
 
 
 def register_jupy_logger() -> None:
-  '''Register MMJL magics in the active IPython session.'''
+  '''
+  Register MMJL magics in the active IPython session.
+  '''
   
   ip = None
   
@@ -408,7 +437,9 @@ def register_jupy_logger() -> None:
 
 
 def jupy_logger_register() -> None:
-  '''Backward-compatible registration alias.'''
+  '''
+  Backward-compatible registration alias.
+  '''
   
   register_jupy_logger()
 ##endof:  jupy_logger_register()

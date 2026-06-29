@@ -113,6 +113,8 @@ Machine, user, etc.: {meta["domain_prefix"]} {meta["username"]}@{meta["machine"]
 
 ---
 
+Begin Timeline or Other Log
+
 ---
 '''
 ##endof:  build_log_header(...)
