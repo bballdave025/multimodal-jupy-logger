@@ -7,8 +7,10 @@ from __future__ import annotations
 import base64
 import html
 import json
+import os
 import re
 from pathlib import Path
+from urllib.parse import quote
 
 from multimodal_jupy_logger.metadata import build_log_header, jupy_stamp
 
@@ -337,7 +339,7 @@ class MultimodalJupyLogger:
               mime,
               clean_role,
               clean_label,
-              str(path),
+              self._manifest_path_text(path),
           ])
           + "\n"
       )
@@ -346,6 +348,68 @@ class MultimodalJupyLogger:
   
   
   
+  def _manifest_path_text(self, path: str | Path) -> str:
+    '''
+    Store paths relative to the log root when possible.
+
+    This keeps ``manifest.tsv`` portable when a whole ``jupy_log``
+    directory is moved between machines or exported from SageMaker.
+    '''
+
+    path_obj = Path(path).expanduser().resolve()
+
+    try:
+      return path_obj.relative_to(self.root).as_posix()
+    except ValueError:
+      return str(path_obj)
+    ##endof:  try/except ValueError
+  ##endof:  _manifest_path_text(...)
+
+
+
+  def _resolve_artifact_path(self, path: str | Path) -> Path:
+    '''
+    Resolve manifest paths that may be absolute or log-root-relative.
+    '''
+
+    path_obj = Path(path).expanduser()
+
+    if path_obj.is_absolute():
+      return path_obj.resolve()
+    ##endof:  if path_obj.is_absolute()
+
+    return (self.root / path_obj).resolve()
+  ##endof:  _resolve_artifact_path(...)
+
+
+
+  def _url_from_timeline(
+        self,
+        artifact_path: str | Path,
+        out_path: str | Path,
+      ) -> str:
+    '''
+    Build a portable URL from a timeline file to an artifact.
+    '''
+
+    resolved_artifact = self._resolve_artifact_path(artifact_path)
+    resolved_out_path = Path(out_path).expanduser().resolve()
+
+    try:
+      relative_path = os.path.relpath(
+          resolved_artifact,
+          start=resolved_out_path.parent,
+      )
+      url = Path(relative_path).as_posix()
+    except ValueError:
+      url = resolved_artifact.as_uri()
+    ##endof:  try/except ValueError
+
+    return quote(url)
+  ##endof:  _url_from_timeline(...)
+
+
+
   def log_bytes(
         self,
         data: bytes,
@@ -702,7 +766,7 @@ class MultimodalJupyLogger:
     rows = self.read_manifest_rows()
     
     for row in rows:
-      path = Path(row.get("path", ""))
+      path = self._resolve_artifact_path(row.get("path", ""))
       
       if not path.exists():
         missing.append(path)
@@ -731,7 +795,7 @@ class MultimodalJupyLogger:
     @TODO  Add richer styling.
     '''
     
-    out_path = Path(out_path or self.timelines / "timeline.html")
+    out_path = Path(out_path or self.timelines / "timeline.html").expanduser().resolve()
     rows = self.read_manifest_rows()
     parts = []
     stamp = ""
@@ -752,7 +816,7 @@ class MultimodalJupyLogger:
         html.escape(
             build_log_header(
                 title="Multimodal Jupy Logger HTML Timeline",
-                output_name=str(out_path),
+                output_name=self._manifest_path_text(out_path),
             )
         ),
         "</pre>",
@@ -764,8 +828,11 @@ class MultimodalJupyLogger:
       mime = row.get("mime", "")
       label = row.get("label", "")
       path = row.get("path", "")
-      path_obj = Path(path)
-      safe_path = html.escape(str(path_obj))
+      path_obj = self._resolve_artifact_path(path)
+      safe_path = html.escape(
+          self._url_from_timeline(path, out_path),
+          quote=True,
+      )
       safe_label = html.escape(label)
       
       parts.append("<hr>")
@@ -827,7 +894,7 @@ class MultimodalJupyLogger:
     @TODO  Add frontmatter option.
     '''
     
-    out_path = Path(out_path or self.timelines / "timeline.md")
+    out_path = Path(out_path or self.timelines / "timeline.md").expanduser().resolve()
     rows = self.read_manifest_rows()
     parts = []
     stamp = ""
@@ -839,13 +906,14 @@ class MultimodalJupyLogger:
     safe_label = ""
     text = ""
     fence = ""
+    artifact_url = ""
     
     parts = [
         "# Jupyter Log Timeline",
         "",
         build_log_header(
             title="Multimodal Jupy Logger Markdown Timeline",
-            output_name=str(out_path),
+            output_name=self._manifest_path_text(out_path),
         ),
         "",
     ]
@@ -856,7 +924,8 @@ class MultimodalJupyLogger:
       mime = row.get("mime", "")
       label = row.get("label", "")
       path = row.get("path", "")
-      path_obj = Path(path)
+      path_obj = self._resolve_artifact_path(path)
+      artifact_url = self._url_from_timeline(path, out_path)
       safe_label = label.replace("\n", " ")
       
       parts.append("---")
@@ -867,16 +936,16 @@ class MultimodalJupyLogger:
       parts.append("")
       
       if kind == "image":
-        parts.append(f"![{safe_label}]({path_obj})")
+        parts.append(f"![{safe_label}]({artifact_url})")
       
       elif kind == "video":
         parts.append(
-            f'<video controls src="{path_obj}" '
+            f'<video controls src="{artifact_url}" '
             f'style="max-width:100%; height:auto;"></video>'
         )
       
       elif kind == "audio":
-        parts.append(f'<audio controls src="{path_obj}"></audio>')
+        parts.append(f'<audio controls src="{artifact_url}"></audio>')
       
       elif kind in ["text", "json"]:
         text = path_obj.read_text(encoding="utf-8")
@@ -889,7 +958,7 @@ class MultimodalJupyLogger:
         parts.append(path_obj.read_text(encoding="utf-8"))
       
       else:
-        parts.append(f"[Artifact]({path_obj})")
+        parts.append(f"[Artifact]({artifact_url})")
       ##endof:  if kind == "image"
       
       parts.append("")
