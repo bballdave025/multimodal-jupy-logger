@@ -17,7 +17,7 @@ reproducibility, and durable engineering outputs.
 ## Continuation Metadata
 
 **Prepared at:**
-{{fill_with_date_command_output}}
+1783005207_2026-07-02T11:13:27-04:00
 
 Generated via:
 
@@ -26,7 +26,7 @@ date +'%s_%Y-%m-%dT%H:%M:%S%z'
 (Boston, MA time)
 
 **Continued from chat:**
-OCR Code Extraction
+~~OCR Code Extraction~~ "Staggering Tylenol and Aleve"
 
 **Also involving:**
 - Recovery of `jupy_pdf_utils.py` from screenshots
@@ -41,7 +41,7 @@ OCR Code Extraction
 @bballdave025
 
 **User (ChatGPT):**
-GPT-5.5
+D Black, Dave, (signed) DWB
 
 ---
 
