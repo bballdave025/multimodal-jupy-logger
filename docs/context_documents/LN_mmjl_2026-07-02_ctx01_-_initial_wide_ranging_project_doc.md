@@ -157,4 +157,64 @@ generators.
 Future interfaces should remain thin wrappers over reusable backend
 transformations.
 
+---
+
+## Future CLI directions
+
+MMJL should continue treating notebook magics as thin frontends over reusable
+transformation backends.
+
+Where a transformation does not require a live IPython kernel, it should also
+be callable from Python APIs and the command line.
+
+Examples include:
+
+```text
+notebook file -> PDF
+notebook file -> HTML
+notebook file -> Markdown
+log root -> validate artifacts
+log root -> inspect manifest
+log root -> build timelines
+```
+
+Possible future CLI examples:
+
+```bash
+python -m multimodal_jupy_logger.mmjl_cli validate jupy_log
+python -m multimodal_jupy_logger.mmjl_cli inspect jupy_log
+python -m multimodal_jupy_logger.mmjl_cli markdown jupy_log
+python -m multimodal_jupy_logger.mmjl_cli html jupy_log
+
+python -m multimodal_jupy_logger.mmjl_cli \
+  export-notebook-html analysis.ipynb
+
+python -m multimodal_jupy_logger.mmjl_cli \
+  export-notebook-pdf analysis.ipynb
+```
+
+The intended architectural split is:
+
+```text
+Notebook-only:
+  - magics
+  - live capture
+  - IPython display integration
+
+Out-of-notebook:
+  - notebook conversion
+  - manifest inspection
+  - validation
+  - timeline generation
+  - archive/export operations
+```
+
+Whole-notebook PDF and HTML export are especially natural CLI operations and
+should not require a notebook environment to perform the underlying
+transformation.
+
+This is future direction and is not part of the success criteria for the
+current PR.
+
+
 *End of Context Document*
