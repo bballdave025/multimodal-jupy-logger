@@ -1,0 +1,985 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\bball> cd D:\David\my_repos_dwb\multimodal-jupy-logger\
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> git status
+On branch initial-code-and-pdf-and-tee
+Your branch is up to date with 'origin/initial-code-and-pdf-and-tee'.
+
+nothing to commit, working tree clean
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> git pull
+Enter passphrase for key '/c/Users/bball/.ssh/id_ed25519':
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 8 (delta 2), reused 8 (delta 2), pack-reused 0 (from 0)
+Unpacking objects: 100% (8/8), 6.14 KiB | 61.00 KiB/s, done.
+From github.com:bballdave025/multimodal-jupy-logger
+   c6e959c..8198245  initial-code-and-pdf-and-tee -> origin/initial-code-and-pdf-and-tee
+Updating c6e959c..8198245
+Fast-forward
+ ...-02_ctx01_-_initial_wide_ranging_project_doc.md | 160 ++++++++++++
+ docs/context_documents/README.md                   | 286 +++++++++++++++++++++
+ .../dev_tips_-_git_dates_and_last_touches.md       | 155 +++++++++++
+ 3 files changed, 601 insertions(+)
+ create mode 100644 docs/context_documents/LN_mmjl_2026-07-02_ctx01_-_initial_wide_ranging_project_doc.md
+ create mode 100644 docs/context_documents/README.md
+ create mode 100644 docs/dev_notes/dev_tips_-_git_dates_and_last_touches.md
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> ls .\docs\context_documents\
+
+
+    Directory: D:\David\my_repos_dwb\multimodal-jupy-logger\docs\context_documents
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          7/9/2026   8:49 AM           3850 LN_mmjl_2026-07-02_ctx01_-_initial_wide_ranging_project_doc.md
+-a----          7/9/2026   8:49 AM           6350 README.md
+
+
+PS D:\David\my_repos_dwb\multimodal-jupy-logger>
+
+                                                 git status
+On branch initial-code-and-pdf-and-tee
+Your branch is up to date with 'origin/initial-code-and-pdf-and-tee'.
+
+nothing to commit, working tree clean
+PS D:\David\my_repos_dwb\multimodal-jupy-logger>
+
+                                               > .
+At line:1 char:1
++ .
++ ~
+Missing expression after '.' in pipeline element.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpression
+
+PS D:\David\my_repos_dwb\multimodal-jupy-logger>
+PS D:\David\my_repos_dwb\multimodal-jupy-logger>
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> .\.venv_mmjl_test\Scripts\Activate.ps1
+.\.venv_mmjl_test\Scripts\Activate.ps1 : File
+D:\David\my_repos_dwb\multimodal-jupy-logger\.venv_mmjl_test\Scripts\Activate.ps1 cannot be loaded because running
+scripts is disabled on this system. For more information, see about_Execution_Policies at
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:1
++ .\.venv_mmjl_test\Scripts\Activate.ps1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> SetExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+SetExecutionPolicy : The term 'SetExecutionPolicy' is not recognized as the name of a cmdlet, function, script file,
+or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and
+try again.
+At line:1 char:1
++ SetExecutionPolicy -Scope Process -ExecutionPolicy Bypass
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (SetExecutionPolicy:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> .\.venv_mmjl_test\Scripts\Activate.ps1
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> git status
+On branch initial-code-and-pdf-and-tee
+Your branch is up to date with 'origin/initial-code-and-pdf-and-tee'.
+
+nothing to commit, working tree clean
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> git pull
+Enter passphrase for key '/c/Users/bball/.ssh/id_ed25519':
+remote: Enumerating objects: 30, done.
+remote: Counting objects: 100% (30/30), done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 19 (delta 8), reused 19 (delta 8), pack-reused 0 (from 0)
+Unpacking objects: 100% (19/19), 15.38 KiB | 117.00 KiB/s, done.
+From github.com:bballdave025/multimodal-jupy-logger
+   8198245..abde49a  initial-code-and-pdf-and-tee -> origin/initial-code-and-pdf-and-tee
+Updating 8198245..abde49a
+Fast-forward
+ ...-02_ctx01_-_initial_wide_ranging_project_doc.md |   6 +-
+ .../PR_COMMENT_initial-code-and-pdf-and-tee.md     | 228 +++++++++
+ docs/dev_notes/dev_tip_-_windows_pdf_debug.md      | 511 +++++++++++++++++++++
+ examples/mmjl_portable_smoke_test.ipynb            | 377 +++++++++++++++
+ examples/mmjl_portable_smoke_test_cells.md         | 303 ++++++++++++
+ src/multimodal_jupy_logger/__init__.py             |  10 +-
+ src/multimodal_jupy_logger/logger.py               |  95 +++-
+ src/multimodal_jupy_logger/magics.py               | 423 +++++++++++------
+ 8 files changed, 1778 insertions(+), 175 deletions(-)
+ create mode 100644 docs/dev_notes/PR_COMMENT_initial-code-and-pdf-and-tee.md
+ create mode 100644 docs/dev_notes/dev_tip_-_windows_pdf_debug.md
+ create mode 100644 examples/mmjl_portable_smoke_test.ipynb
+ create mode 100644 examples/mmjl_portable_smoke_test_cells.md
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> git branch
+* initial-code-and-pdf-and-tee
+  main
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> python -c "import sys; print(sys.executable)"
+D:\David\my_repos_dwb\multimodal-jupy-logger\.venv_mmjl_test\Scripts\python.exe
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> pip freeze | findstr "nbformat"
+nbformat==5.10.4
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> pip freeze | findstr "nbconvert"
+nbconvert==7.17.1
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> pip freeze | findstr "ipython"
+ipython==9.14.1
+ipython_pygments_lexers==1.1.1
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> pip freeze | findstr "numpy"
+numpy==2.4.6
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> type .\requirements.txt
+jupyterlab
+ipykernel
+ipywidgets
+
+numpy
+scipy
+pandas>=2.0.0,<3.0.0
+scikit-learn
+matplotlib
+pillow
+imageio
+
+nbformat
+nbconvert[webpdf]
+traitlets
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> pip freeze | findstr "jupyterlab"
+jupyterlab==4.6.0
+jupyterlab_pygments==0.3.0
+jupyterlab_server==2.28.0
+jupyterlab_widgets==3.0.16
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> pip freeze | findstr "ipykernel"
+ipykernel==7.3.0
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> pip freeze | findstr "numpy"
+numpy==2.4.6
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> pip freeze | findstr "scipy"
+scipy==1.18.0
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> pip freeze | findstr "pandas"
+pandas==2.3.3
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> pip freeze | findstr "scikit-learn"
+scikit-learn==1.9.0
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> pip freeze | findstr "matplotlib"
+matplotlib==3.11.0
+matplotlib-inline==0.2.2
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> pip freeze | findstr "pillow"
+pillow==12.2.0
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> pip freeze | findstr "imageio"
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> pip freeze | findstr "traitlets"
+traitlets==5.15.1
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> # everything but imageio (?)
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> python -c "import imageio; help(imageio)"
+Help on package imageio:
+
+NAME
+    imageio
+
+DESCRIPTION
+    Imageio is a Python library that provides an easy interface to read and
+    write a wide range of image data, including animated images, volumetric
+    data, and scientific formats. It is cross-platform, runs on Python 3.10+,
+    and is easy to install.
+
+    Main website: https://imageio.readthedocs.io/
+
+PACKAGE CONTENTS
+    __main__
+    config (package)
+    core (package)
+    freeze
+    plugins (package)
+    testing
+    typing
+    v2
+    v3
+
+FUNCTIONS
+    get_reader(uri, format=None, mode='?', **kwargs)
+        get_reader(uri, format=None, mode='?', **kwargs)
+
+        Returns a :class:`.Reader` object which can be used to read data
+
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> # probably part of stdlib
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> Get-ChildItem src\multimodal_jupy_logger
+
+
+    Directory: D:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         6/20/2026   1:05 PM                utils
+d-----         6/29/2026   7:30 AM                __pycache__
+-a----         6/29/2026   5:02 PM           8717 jupy_pdf_utils.py
+-a----         7/10/2026   9:28 PM          25007 logger.py
+-a----         7/10/2026   9:28 PM          13693 magics.py
+-a----         6/29/2026   4:53 PM           2581 metadata.py
+-a----         6/19/2026   3:09 PM           4023 mmjl_cli.py
+-a----         7/10/2026   9:28 PM            393 __init__.py
+
+
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> Get-ChildItem .\src\multimodal_jupy_logger\utils\
+
+
+    Directory: D:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger\utils
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         6/20/2026   1:05 PM                __pycache__
+-a----         6/19/2026   3:09 PM           7409 path_display.py
+-a----         6/19/2026   3:09 PM            253 __init__.py
+
+
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> cd src\multimodal_jupy_logger
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger> python -c "import jupy_pdf_utils; print('import ok')"
+import ok
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger> # Woo hoo!
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger> python -c "import jupy_pdf_utils; help(jupy_pdf_utils)"
+Help on module jupy_pdf_utils:
+
+NAME
+    jupy_pdf_utils
+
+CLASSES
+    IPython.core.magic.Magics(traitlets.config.configurable.Configurable)
+        JupyPdfMagics
+
+    class JupyPdfMagics(IPython.core.magic.Magics)
+     |  JupyPdfMagics(shell: 'InteractiveShell | None' = None, **kwargs: 'Any') -> 'None'
+     |
+     |  IPython/Jupyter magic interface for notebook PDF backup.
+     |
+     |  Method resolution order:
+     |      JupyPdfMagics
+     |      IPython.core.magic.Magics
+     |      traitlets.config.configurable.Configurable
+     |      traitlets.traitlets.HasTraits
+     |      traitlets.traitlets.HasDescriptors
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  backup_pdf(self, line: 'str') -> 'None'
+     |      Jupyter line magic interface.
+     |
+     |      Usage:
+     |        %backup_pdf
+     |        %backup_pdf optional_output_name.pdf
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __annotations__ = {}
+     |
+     |  magics = {'cell': {}, 'line': {'backup_pdf': 'backup_pdf'}}
+     |
+     |  registered = True
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from IPython.core.magic.Magics:
+     |
+     |  __init__(self, shell: 'InteractiveShell | None' = None, **kwargs: 'Any') -> 'None'
+     |      Create a configurable given a config config.
+     |
+     |      Parameters
+     |      ----------
+     |      config : Config
+     |          If this is empty, default values are used. If config is a
+     |          :class:`Config` instance, it will be used to configure the
+     |          instance.
+     |      parent : Configurable instance, optional
+     |          The parent Configurable instance of this object.
+     |
+     |      Notes
+     |      -----
+     |      Subclasses of Configurable must call the :meth:`__init__` method of
+     |      :class:`Configurable` *before* doing anything else and using
+     |      :func:`super`::
+     |
+     |          class MyConfigurable(Configurable):
+     |              def __init__(self, config=None):
+     |                  super(MyConfigurable, self).__init__(config=config)
+     |                  # Then any other code you need to finish initialization.
+     |
+     |      This ensures that instances will be configured properly.
+     |
+     |  arg_err(self, func: 'Callable[..., Any]') -> 'None'
+     |      Print docstring if incorrect arguments were passed
+     |
+     |  format_latex(self, strng: 'str') -> 'str'
+     |      Format a string for latex inclusion.
+     |
+     |  parse_options(
+     |      self,
+     |      arg_str: 'str',
+     |      opt_str: 'str',
+     |      *long_opts: 'str',
+     |      **kw: 'Any'
+     |  ) -> 'tuple[Any, Any]'
+     |      Parse options passed to an argument string.
+     |
+     |      The interface is similar to that of :func:`getopt.getopt`, but it
+     |      returns a :class:`~IPython.utils.struct.Struct` with the options as keys
+     |      and the stripped argument string still as a string.
+     |
+     |      arg_str is quoted as a true sys.argv vector by using shlex.split.
+     |      This allows us to easily expand variables, glob files, quote
+     |      arguments, etc.
+     |
+     |      Parameters
+     |      ----------
+     |      arg_str : str
+     |          The arguments to parse.
+     |      opt_str : str
+     |          The options specification.
+     |      mode : str, default 'string'
+     |          If given as 'list', the argument string is returned as a list (split
+     |          on whitespace) instead of a string.
+     |      list_all : bool, default False
+     |          Put all option values in lists. Normally only options
+     |          appearing more than once are put in a list.
+     |      posix : bool, default True
+     |          Whether to split the input line in POSIX mode or not, as per the
+     |          conventions outlined in the :mod:`shlex` module from the standard
+     |          library.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from IPython.core.magic.Magics:
+     |
+     |  options_table = {}
+     |
+     |  shell = None
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from traitlets.config.configurable.Configurable:
+     |
+     |  update_config(self, config: 'Config') -> 'None'
+     |      Update config and load the new values
+     |
+     |  ----------------------------------------------------------------------
+     |  Class methods inherited from traitlets.config.configurable.Configurable:
+     |
+     |  class_config_rst_doc() -> 'str'
+     |      Generate rST documentation for this class' config options.
+     |
+     |      Excludes traits defined on parent classes.
+     |
+     |  class_config_section(classes: 't.Sequence[type[HasTraits]] | None' = None) -> 'str'
+     |      Get the config section for this class.
+     |
+     |      Parameters
+     |      ----------
+     |      classes : list, optional
+     |          The list of other classes in the config file.
+     |          Used to reduce redundant information.
+     |
+     |  class_get_help(inst: 'HasTraits | None' = None) -> 'str'
+     |      Get the help string for this class in ReST format.
+     |
+     |      If `inst` is given, its current trait values will be used in place of
+     |      class defaults.
+     |
+     |  class_get_trait_help(
+     |      trait: 'TraitType[t.Any, t.Any]',
+     |      inst: 'HasTraits | None' = None,
+     |      helptext: 'str | None' = None
+     |  ) -> 'str'
+     |      Get the helptext string for a single trait.
+     |
+     |      :param inst:
+     |          If given, its current trait values will be used in place of
+     |          the class default.
+     |      :param helptext:
+     |          If not given, uses the `help` attribute of the current trait.
+     |
+     |  class_print_help(inst: 'HasTraits | None' = None) -> 'None'
+     |      Get the help string for a single trait and print it.
+     |
+     |  section_names() -> 'list[str]'
+     |      return section names as a list
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from traitlets.config.configurable.Configurable:
+     |
+     |  config
+     |
+     |  parent
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from traitlets.traitlets.HasTraits:
+     |
+     |  __getstate__(self) -> 'dict[str, t.Any]'
+     |      Helper for pickle.
+     |
+     |  __setstate__(self, state: 'dict[str, t.Any]') -> 'None'
+     |
+     |  add_traits(self, **traits: 't.Any') -> 'None'
+     |      Dynamically add trait attributes to the HasTraits instance.
+     |
+     |  has_trait(self, name: 'str') -> 'bool'
+     |      Returns True if the object has a trait with the specified name.
+     |
+     |  hold_trait_notifications(self) -> 't.Any'
+     |      Context manager for bundling trait change notifications and cross
+     |      validation.
+     |
+     |      Use this when doing multiple trait assignments (init, config), to avoid
+     |      race conditions in trait notifiers requesting other trait values.
+     |      All trait notifications will fire after all values have been assigned.
+     |
+     |  notify_change(self, change: 'Bunch') -> 'None'
+     |      Notify observers of a change event
+     |
+     |  observe(
+     |      self,
+     |      handler: 't.Callable[..., t.Any]',
+     |      names: 'Sentinel | str | t.Iterable[Sentinel | str]' = traitlets.All,
+     |      type: 'Sentinel | str' = 'change'
+     |  ) -> 'None'
+     |      Setup a handler to be called when a trait changes.
+     |
+     |      This is used to setup dynamic notifications of trait changes.
+     |
+     |      Parameters
+     |      ----------
+     |      handler : callable
+     |          A callable that is called when a trait changes. Its
+     |          signature should be ``handler(change)``, where ``change`` is a
+     |          dictionary. The change dictionary at least holds a 'type' key.
+     |          * ``type``: the type of notification.
+     |          Other keys may be passed depending on the value of 'type'. In the
+     |          case where type is 'change', we also have the following keys:
+     |          * ``owner`` : the HasTraits instance
+     |          * ``old`` : the old value of the modified trait attribute
+     |          * ``new`` : the new value of the modified trait attribute
+     |          * ``name`` : the name of the modified trait attribute.
+     |      names : list, str, All
+     |          If names is All, the handler will apply to all traits.  If a list
+     |          of str, handler will apply to all names in the list.  If a
+     |          str, the handler will apply just to that name.
+     |      type : str, All (default: 'change')
+     |          The type of notification to filter by. If equal to All, then all
+     |          notifications are passed to the observe handler.
+     |
+     |  on_trait_change(
+     |      self,
+     |      handler: 'EventHandler | None' = None,
+     |      name: 'Sentinel | str | None' = None,
+     |      remove: 'bool' = False
+     |  ) -> 'None'
+     |      DEPRECATED: Setup a handler to be called when a trait changes.
+     |
+     |      This is used to setup dynamic notifications of trait changes.
+     |
+     |      Static handlers can be created by creating methods on a HasTraits
+     |      subclass with the naming convention '_[traitname]_changed'.  Thus,
+     |      to create static handler for the trait 'a', create the method
+     |      _a_changed(self, name, old, new) (fewer arguments can be used, see
+     |      below).
+     |
+     |      If `remove` is True and `handler` is not specified, all change
+     |      handlers for the specified name are uninstalled.
+     |
+     |      Parameters
+     |      ----------
+     |      handler : callable, None
+     |          A callable that is called when a trait changes.  Its
+     |          signature can be handler(), handler(name), handler(name, new),
+     |          handler(name, old, new), or handler(name, old, new, self).
+     |      name : list, str, None
+     |          If None, the handler will apply to all traits.  If a list
+     |          of str, handler will apply to all names in the list.  If a
+     |          str, the handler will apply just to that name.
+     |      remove : bool
+     |          If False (the default), then install the handler.  If True
+     |          then unintall it.
+     |
+     |  set_trait(self, name: 'str', value: 't.Any') -> 'None'
+     |      Forcibly sets trait attribute, including read-only attributes.
+     |
+     |  setup_instance(self, /, *args: 't.Any', **kwargs: 't.Any') -> 'None'
+     |      This is called **before** self.__init__ is called.
+     |
+     |  trait_defaults(self, *names: 'str', **metadata: 't.Any') -> 'dict[str, t.Any] | Sentinel'
+     |      Return a trait's default value or a dictionary of them
+     |
+     |      Notes
+     |      -----
+     |      Dynamically generated default values may
+     |      depend on the current state of the object.
+     |
+     |  trait_has_value(self, name: 'str') -> 'bool'
+     |      Returns True if the specified trait has a value.
+     |
+     |      This will return false even if ``getattr`` would return a
+     |      dynamically generated default value. These default values
+     |      will be recognized as existing only after they have been
+     |      generated.
+     |
+     |      Example
+     |
+     |      .. code-block:: python
+     |
+     |          class MyClass(HasTraits):
+     |              i = Int()
+     |
+     |
+     |          mc = MyClass()
+     |          assert not mc.trait_has_value("i")
+     |          mc.i  # generates a default value
+     |          assert mc.trait_has_value("i")
+     |
+     |  trait_metadata(self, traitname: 'str', key: 'str', default: 't.Any' = None) -> 't.Any'
+     |      Get metadata values for trait by key.
+     |
+     |  trait_names(self, **metadata: 't.Any') -> 'list[str]'
+     |      Get a list of all the names of this class' traits.
+     |
+     |  trait_values(self, **metadata: 't.Any') -> 'dict[str, t.Any]'
+     |      A ``dict`` of trait names and their values.
+     |
+     |      The metadata kwargs allow functions to be passed in which
+     |      filter traits based on metadata values.  The functions should
+     |      take a single value as an argument and return a boolean.  If
+     |      any function returns False, then the trait is not included in
+     |      the output.  If a metadata key doesn't exist, None will be passed
+     |      to the function.
+     |
+     |      Returns
+     |      -------
+     |      A ``dict`` of trait names and their values.
+     |
+     |      Notes
+     |      -----
+     |      Trait values are retrieved via ``getattr``, any exceptions raised
+     |      by traits or the operations they may trigger will result in the
+     |      absence of a trait value in the result ``dict``.
+     |
+     |  traits(self, **metadata: 't.Any') -> 'dict[str, TraitType[t.Any, t.Any]]'
+     |      Get a ``dict`` of all the traits of this class.  The dictionary
+     |      is keyed on the name and the values are the TraitType objects.
+     |
+     |      The TraitTypes returned don't know anything about the values
+     |      that the various HasTrait's instances are holding.
+     |
+     |      The metadata kwargs allow functions to be passed in which
+     |      filter traits based on metadata values.  The functions should
+     |      take a single value as an argument and return a boolean.  If
+     |      any function returns False, then the trait is not included in
+     |      the output.  If a metadata key doesn't exist, None will be passed
+     |      to the function.
+     |
+     |  unobserve(
+     |      self,
+     |      handler: 't.Callable[..., t.Any]',
+     |      names: 'Sentinel | str | t.Iterable[Sentinel | str]' = traitlets.All,
+     |      type: 'Sentinel | str' = 'change'
+     |  ) -> 'None'
+     |      Remove a trait change handler.
+     |
+     |      This is used to unregister handlers to trait change notifications.
+     |
+     |      Parameters
+     |      ----------
+     |      handler : callable
+     |          The callable called when a trait attribute changes.
+     |      names : list, str, All (default: All)
+     |          The names of the traits for which the specified handler should be
+     |          uninstalled. If names is All, the specified handler is uninstalled
+     |          from the list of notifiers corresponding to all changes.
+     |      type : str or All (default: 'change')
+     |          The type of notification to filter by. If All, the specified handler
+     |          is uninstalled from the list of notifiers corresponding to all types.
+     |
+     |  unobserve_all(self, name: 'str | t.Any' = traitlets.All) -> 'None'
+     |      Remove trait change handlers of any type for the specified name.
+     |      If name is not specified, removes all trait notifiers.
+     |
+     |  ----------------------------------------------------------------------
+     |  Class methods inherited from traitlets.traitlets.HasTraits:
+     |
+     |  class_own_trait_events(name: 'str') -> 'dict[str, EventHandler]'
+     |      Get a dict of all event handlers defined on this class, not a parent.
+     |
+     |      Works like ``event_handlers``, except for excluding traits from parents.
+     |
+     |  class_own_traits(**metadata: 't.Any') -> 'dict[str, TraitType[t.Any, t.Any]]'
+     |      Get a dict of all the traitlets defined on this class, not a parent.
+     |
+     |      Works like `class_traits`, except for excluding traits from parents.
+     |
+     |  class_trait_names(**metadata: 't.Any') -> 'list[str]'
+     |      Get a list of all the names of this class' traits.
+     |
+     |      This method is just like the :meth:`trait_names` method,
+     |      but is unbound.
+     |
+     |  class_traits(**metadata: 't.Any') -> 'dict[str, TraitType[t.Any, t.Any]]'
+     |      Get a ``dict`` of all the traits of this class.  The dictionary
+     |      is keyed on the name and the values are the TraitType objects.
+     |
+     |      This method is just like the :meth:`traits` method, but is unbound.
+     |
+     |      The TraitTypes returned don't know anything about the values
+     |      that the various HasTrait's instances are holding.
+     |
+     |      The metadata kwargs allow functions to be passed in which
+     |      filter traits based on metadata values.  The functions should
+     |      take a single value as an argument and return a boolean.  If
+     |      any function returns False, then the trait is not included in
+     |      the output.  If a metadata key doesn't exist, None will be passed
+     |      to the function.
+     |
+     |  trait_events(name: 'str | None' = None) -> 'dict[str, EventHandler]'
+     |      Get a ``dict`` of all the event handlers of this class.
+     |
+     |      Parameters
+     |      ----------
+     |      name : str (default: None)
+     |          The name of a trait of this class. If name is ``None`` then all
+     |          the event handlers of this class will be returned instead.
+     |
+     |      Returns
+     |      -------
+     |      The event handlers associated with a trait name, or all event handlers.
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties inherited from traitlets.traitlets.HasTraits:
+     |
+     |  cross_validation_lock
+     |      A contextmanager for running a block with our cross validation lock set
+     |      to True.
+     |
+     |      At the end of the block, the lock's value is restored to its value
+     |      prior to entering the block.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from traitlets.traitlets.HasDescriptors:
+     |
+     |  __new__(cls, /, *args: 't.Any', **kwargs: 't.Any') -> 'Self'
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from traitlets.traitlets.HasDescriptors:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+FUNCTIONS
+    detect_active_notebook_path() -> 'pathlib.Path'
+        Fetch the file path of the currently executing notebook session.
+
+        This depends on Jupyter/IPython making `__session__` available.
+        If that is unavailable, callers should pass an explicit input path.
+
+    export_notebook_to_pdf(
+        input_path: 'str | None' = None,
+        output_path: 'str | None' = None,
+        hide_code: 'bool' = False
+    ) -> 'None'
+        Core execution engine.
+
+        Handles active-notebook resolution, optional frontend save,
+        metadata header injection, and PDF rendering.
+
+    get_system_metadata() -> 'dict[str, str]'
+        Gather cross-platform environment, machine, and timestamp metadata.
+
+    load_ipython_extension(ip) -> 'None'
+        IPython extension hook.
+
+        Enables:
+
+          %load_ext multimodal_jupy_logger.jupy_pdf_utils
+
+    main() -> 'None'
+        Terminal argument parser interface.
+
+    register_pdf_magics(ip=None) -> 'bool'
+        Register PDF backup magics when an IPython shell is available.
+
+        Returns True if registration happened, False otherwise.
+
+FILE
+    d:\david\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger\jupy_pdf_utils.py
+
+
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger>
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger>
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger>
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger>
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger>
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger>
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger>
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger>
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger>
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger> # Hooray again!
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger> python -c "from jupy_pdf_utils import export_notebook_to_pdf, register_pdf_magics; print('symbols ok')"
+symbols ok
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger> python -c "from jupy_pdf_utils import register_pdf_magics; print(register_pdf_magics())"
+False
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger\src\multimodal_jupy_logger> cd ..\..
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> $env:PYTHONPATH="src"
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> python -c "from multimodal_jupy_logger import jupy_pdf_utils; print('package import ok')"
+package import ok
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> Get-ChildItem src -Recurse *.py |
+>>   ForEach-Object {
+>>     python -m py_compile $_.FullName
+>>   }
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> # Let's just assume it worked.
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> ls ..\..\tmp\
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> cp .\examples\mmjl_portable_smoke_test.ipynb ..\..\tmp\
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger>
+
+
+
+
+                                                                   deactivate
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> cd ..\..
+PS D:\David>
+PS D:\David>
+PS D:\David>
+PS D:\David>
+PS D:\David>
+PS D:\David>
+PS D:\David>
+PS D:\David>
+PS D:\David>
+PS D:\David>
+PS D:\David> cd tmp
+PS D:\David\tmp> mkdir try_1
+
+
+    Directory: D:\David\tmp
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         7/11/2026  12:09 PM                try_1
+
+
+PS D:\David\tmp> mkdir try_2
+
+
+    Directory: D:\David\tmp
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         7/11/2026  12:10 PM                try_2
+
+
+PS D:\David\tmp> ls
+
+
+    Directory: D:\David\tmp
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         7/11/2026  12:09 PM                try_1
+d-----         7/11/2026  12:10 PM                try_2
+-a----         7/10/2026   9:28 PM          11359 mmjl_portable_smoke_test.ipynb
+
+
+PS D:\David\tmp> rm mmjl_portable_smoke_test
+rm : Cannot find path 'D:\David\tmp\mmjl_portable_smoke_test' because it does not exist.
+At line:1 char:1
++ rm mmjl_portable_smoke_test
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (D:\David\tmp\mmjl_portable_smoke_test:String) [Remove-Item], ItemNotFou
+   ndException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.RemoveItemCommand
+
+PS D:\David\tmp> rm .\mmjl_portable_smoke_test.ipynb
+PS D:\David\tmp>
+PS D:\David\tmp>
+PS D:\David\tmp>
+PS D:\David\tmp>
+PS D:\David\tmp>
+PS D:\David\tmp>
+PS D:\David\tmp>
+PS D:\David\tmp>
+PS D:\David\tmp>
+PS D:\David\tmp>
+PS D:\David\tmp> tree /a /f
+Folder PATH listing for volume Data
+Volume serial number is 000000BC 54F1:EAFA
+D:.
++---try_1
+\---try_2
+PS D:\David\tmp> cd ..\
+PS D:\David> cd .\my_repos_dwb\multimodal-jupy-logger\
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> git status
+On branch initial-code-and-pdf-and-tee
+Your branch is up to date with 'origin/initial-code-and-pdf-and-tee'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   docs/context_documents/LN_mmjl_2026-07-02_ctx01_-_initial_wide_ranging_project_doc.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        docs/dev_notes/future_cli_directions.md
+        docs/dev_notes/import_before_portable_smoke_tests.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> git add --all
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> git status
+On branch initial-code-and-pdf-and-tee
+Your branch is up to date with 'origin/initial-code-and-pdf-and-tee'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   docs/context_documents/LN_mmjl_2026-07-02_ctx01_-_initial_wide_ranging_project_doc.md
+        new file:   docs/dev_notes/future_cli_directions.md
+        new file:   docs/dev_notes/import_before_portable_smoke_tests.md
+
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> git commit -m "dev notes for cli and import checks on pdf module"
+[initial-code-and-pdf-and-tee b268fcb] dev notes for cli and import checks on pdf module
+ 3 files changed, 611 insertions(+)
+ create mode 100644 docs/dev_notes/future_cli_directions.md
+ create mode 100644 docs/dev_notes/import_before_portable_smoke_tests.md
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> git status
+On branch initial-code-and-pdf-and-tee
+Your branch is ahead of 'origin/initial-code-and-pdf-and-tee' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> git pull
+Enter passphrase for key '/c/Users/bball/.ssh/id_ed25519':
+Already up to date.
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> git push
+Enter passphrase for key '/c/Users/bball/.ssh/id_ed25519':
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 4.00 KiB | 2.00 MiB/s, done.
+Total 8 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To github.com:bballdave025/multimodal-jupy-logger.git
+   abde49a..b268fcb  initial-code-and-pdf-and-tee -> initial-code-and-pdf-and-tee
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> git branch
+* initial-code-and-pdf-and-tee
+  main
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> git status
+On branch initial-code-and-pdf-and-tee
+Your branch is up to date with 'origin/initial-code-and-pdf-and-tee'.
+
+nothing to commit, working tree clean
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> ls
+
+
+    Directory: D:\David\my_repos_dwb\multimodal-jupy-logger
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         6/19/2026   3:23 PM                .venv_mmjl_test
+d-----          7/9/2026   8:49 AM                docs
+d-----         7/10/2026   9:28 PM                examples
+d-----         6/29/2026   3:02 PM                jupy_log
+d-----         6/19/2026   3:09 PM                src
+-a----         6/19/2026   3:09 PM           5137 .gitattributes
+-a----         6/29/2026   6:41 PM           6329 .gitignore
+-a----         6/19/2026   3:09 PM           1068 LICENSE
+-a----         6/19/2026   3:09 PM           2992 README.md
+-a----         6/19/2026   3:09 PM           4364 reproducibility_win_init__requirements.txt
+-a----         6/19/2026   6:20 PM           4406 repr_win_laptop_init__requirements.txt
+-a----         6/19/2026   3:09 PM             73 requirements-ml.txt
+-a----         6/19/2026   3:09 PM            143 requirements.txt
+
+
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> cp .\examples\mmjl_portable_smoke_test.ipynb ..\..\tmp\try_1\
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> .\.venv_mmjl_test\Scripts\Activate.ps1
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> cd ..\..\tmp\try_1\
+(.venv_mmjl_test) PS D:\David\tmp\try_1> ls
+
+
+    Directory: D:\David\tmp\try_1
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         7/10/2026   9:28 PM          11359 mmjl_portable_smoke_test.ipynb
+
+
+(.venv_mmjl_test) PS D:\David\tmp\try_1> $repoRoot = `
+>> >>   "D:\David\my_repos_dwb\multimodal-jupy-logger"
+>> : The term '>>' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling
+of the name, or if a path was included, verify that the path is correct and try again.
+At line:2 char:1
++ >>   "D:\David\my_repos_dwb\multimodal-jupy-logger"
++ ~~
+    + CategoryInfo          : ObjectNotFound: (>>:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+(.venv_mmjl_test) PS D:\David\tmp\try_1> Get-Date
+
+Sunday, July 12, 2026 7:21:11 AM
+
+
+(.venv_mmjl_test) PS D:\David\tmp\try_1> Get-Date -Format "o"
+2026-07-12T07:21:16.7482043-04:00
+(.venv_mmjl_test) PS D:\David\tmp\try_1> Get-Date -UFormat "%s"
+1783840885.78636
+(.venv_mmjl_test) PS D:\David\tmp\try_1> $repoRoot = `
+>>   "D:\David\my_repos_dwb\multimodal-jupy-logger"
+(.venv_mmjl_test) PS D:\David\tmp\try_1>
+(.venv_mmjl_test) PS D:\David\tmp\try_1> $mmjlSrc = `
+>>   "$repoRoot\src"
+(.venv_mmjl_test) PS D:\David\tmp\try_1> $repoRoot
+D:\David\my_repos_dwb\multimodal-jupy-logger
+(.venv_mmjl_test) PS D:\David\tmp\try_1> $mmjlSrc
+D:\David\my_repos_dwb\multimodal-jupy-logger\src
+(.venv_mmjl_test) PS D:\David\tmp\try_1> $env:PYTHONPATH = $mmjlSrc
+(.venv_mmjl_test) PS D:\David\tmp\try_1> $env:PYTHONPATH
+D:\David\my_repos_dwb\multimodal-jupy-logger\src
+(.venv_mmjl_test) PS D:\David\tmp\try_1> python -c "import sys; print(sys.executable)"
+D:\David\my_repos_dwb\multimodal-jupy-logger\.venv_mmjl_test\Scripts\python.exe
+(.venv_mmjl_test) PS D:\David\tmp\try_1> python -c "from multimodal_jupy_logger import MultimodalJupyLogger, register_jupy_logger; print('public logger symbols ok')"
+public logger symbols ok
+(.venv_mmjl_test) PS D:\David\tmp\try_1>
+(.venv_mmjl_test) PS D:\David\tmp\try_1> python -c "import multimodal_jupy_logger.jupy_pdf_utils; print('PDF submodule import ok')"
+PDF submodule import ok
+(.venv_mmjl_test) PS D:\David\tmp\try_1> python -c "from multimodal_jupy_logger.jupy_pdf_utils import export_notebook_to_pdf, register_pdf_magics; print('PDF symbols ok')"
+PDF symbols ok
+(.venv_mmjl_test) PS D:\David\tmp\try_1> python -c "from multimodal_jupy_logger.jupy_pdf_utils import register_pdf_magics; print('registered:', register_pdf_magics())"
+registered: False
+(.venv_mmjl_test) PS D:\David\tmp\try_1> python -m multimodal_jupy_logger.jupy_pdf_utils --help
+usage: jupy_pdf_utils.py [-h] [-o OUTPUT] [--show-code] input
+
+Convert Jupyter Notebook directly to PDF.
+
+positional arguments:
+  input                Target path to the local input .ipynb file.
+
+options:
+  -h, --help           show this help message and exit
+  -o, --output OUTPUT  Custom output path for the destination PDF.
+  --show-code          Include code input cells in the PDF.
+(.venv_mmjl_test) PS D:\David\tmp\try_1> python -m compileall -q $mmjlSrc
+(.venv_mmjl_test) PS D:\David\tmp\try_1> if ($LASTEXITCODE -eq 0) {
+>>   Write-Host "[PASS] MMJL source compilation passed."
+>> } else {
+>>   Write-Host "[FAIL] MMJL source compilation failed."
+>> }
+[PASS] MMJL source compilation passed.
+(.venv_mmjl_test) PS D:\David\tmp\try_1>
+(.venv_mmjl_test) PS D:\David\tmp\try_1>
+(.venv_mmjl_test) PS D:\David\tmp\try_1>
+(.venv_mmjl_test) PS D:\David\tmp\try_1>
+(.venv_mmjl_test) PS D:\David\tmp\try_1>
+(.venv_mmjl_test) PS D:\David\tmp\try_1> ls
+
+
+    Directory: D:\David\tmp\try_1
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         7/10/2026   9:28 PM          11359 mmjl_portable_smoke_test.ipynb
+
+
+(.venv_mmjl_test) PS D:\David\tmp\try_1> python -m jupyter lab

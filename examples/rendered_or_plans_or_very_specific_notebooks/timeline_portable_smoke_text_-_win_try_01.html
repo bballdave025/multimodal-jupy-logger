@@ -1,0 +1,113 @@
+
+<!-- saved from url=(0070)file:///D:/David/tmp/try_1/jupy_log_smoke_test/timelines/timeline.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>
+<h1>Jupyter Log Timeline</h1>
+<pre>**Multimodal Jupy Logger HTML Timeline**
+
+This log file: timelines/timeline.html
+Timestamp: 1783862244574_2026-07-12T091724574-0400
+Machine, user, etc.: BLACK-MACHINE bball@BLACK-MACHINE
+
+---
+
+---
+
+Begin Timeline or Other Log
+
+---
+
+</pre>
+<hr>
+<h3>smoke-markdown-note</h3>
+<p><code>1783856703497_2026-07-12T074503497-0400</code> — text — text/markdown</p>
+<pre># Smoke Markdown note
+
+This text was logged with `%%jupy_log`.
+
+It should appear in the manifest and exported timelines.
+</pre>
+<hr>
+<h3>pin-000001-input</h3>
+<p><code>1783862106474_2026-07-12T091506474-0400</code> — text — text/x-python</p>
+<pre>pin_message = "pin captures input and output"
+print(pin_message)
+</pre>
+<hr>
+<h3>pin-000001-stdout</h3>
+<p><code>1783862106492_2026-07-12T091506492-0400</code> — text — text/plain</p>
+<pre>pin captures input and output
+</pre>
+<hr>
+<h3>named-pin-default-input</h3>
+<p><code>1783862108645_2026-07-12T091508645-0400</code> — text — text/x-python</p>
+<pre>named_message = "label alone behaves like pin"
+print(named_message)
+</pre>
+<hr>
+<h3>named-pin-default-stdout</h3>
+<p><code>1783862108669_2026-07-12T091508669-0400</code> — text — text/plain</p>
+<pre>label alone behaves like pin
+</pre>
+<hr>
+<h3>input-only-example-input</h3>
+<p><code>1783862112120_2026-07-12T091512120-0400</code> — text — text/x-python</p>
+<pre>quiet_value = sum([1, 2, 3, 4])
+print("This output should show in Jupyter, but not be logged by --pin-input.")
+</pre>
+<hr>
+<h3>output-only-example-stdout</h3>
+<p><code>1783862114129_2026-07-12T091514129-0400</code> — text — text/plain</p>
+<pre>This output should be logged, but the input should not be logged.
+</pre>
+<hr>
+<h3>output-only-example-display-01-01-text</h3>
+<p><code>1783862114145_2026-07-12T091514145-0400</code> — text — text/plain</p>
+<pre>42</pre>
+<hr>
+<h3>tiny-plot-input</h3>
+<p><code>1783862177883_2026-07-12T091617883-0400</code> — text — text/x-python</p>
+<pre>import matplotlib.pyplot as plt
+
+xs = [0, 1, 2, 3, 4]
+ys = [x * x for x in xs]
+
+plt.figure(figsize=(5, 3))
+plt.plot(xs, ys, marker="o")
+plt.title("MMJL smoke test plot")
+plt.xlabel("x")
+plt.ylabel("x squared")
+plt.grid(True)
+plt.show()
+</pre>
+<hr>
+<h3>tiny-plot-display-01-01-text</h3>
+<p><code>1783862181071_2026-07-12T091621071-0400</code> — text — text/plain</p>
+<pre>&lt;Figure size 500x300 with 1 Axes&gt;</pre>
+<hr>
+<h3>tiny-plot-display-01-02-image</h3>
+<p><code>1783862181085_2026-07-12T091621085-0400</code> — image — image/png</p>
+<img src="./timeline_portable_smoke_text_-_win_try_01_files/000011_1783862181085_2026-07-12T091621085-0400_tiny-plot-display-01-02-image.png" style="max-width:100%; height:auto;">
+<hr>
+<h3>expected-exception-input</h3>
+<p><code>1783862221580_2026-07-12T091701580-0400</code> — text — text/x-python</p>
+<pre>print("This cell intentionally raises an exception.")
+raise ValueError("Expected MMJL smoke-test exception")
+</pre>
+<hr>
+<h3>expected-exception-stdout</h3>
+<p><code>1783862222184_2026-07-12T091702184-0400</code> — text — text/plain</p>
+<pre>This cell intentionally raises an exception.
+</pre>
+<hr>
+<h3>expected-exception-exception</h3>
+<p><code>1783862222228_2026-07-12T091702228-0400</code> — text — text/plain</p>
+<pre>Traceback (most recent call last):
+  File "D:\David\my_repos_dwb\multimodal-jupy-logger\.venv_mmjl_test\Lib\site-packages\IPython\core\interactiveshell.py", line 3748, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bball\AppData\Local\Temp\ipykernel_22732\2174790293.py", line 2, in &lt;module&gt;
+    raise ValueError("Expected MMJL smoke-test exception")
+ValueError: Expected MMJL smoke-test exception
+</pre>
+
+</body></html>
