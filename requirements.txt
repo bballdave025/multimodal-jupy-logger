@@ -1,15 +1,3 @@
 jupyterlab
 ipykernel
-ipywidgets
-
-numpy
-scipy
-pandas>=2.0.0,<3.0.0
-scikit-learn
 matplotlib
-pillow
-imageio
-
-nbformat
-nbconvert[webpdf]
-traitlets

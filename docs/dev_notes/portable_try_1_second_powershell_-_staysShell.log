@@ -3,8 +3,111 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
 
-PS C:\Users\bball> cd D:\David\tmp\try_1
-PS D:\David\tmp\try_1> ls
+PS D:\David\tmp> tree /a /f 
+
+Folder PATH listing for volume Data Volume serial number is XXXXXX D:
+
+. 
++---try_1 
+\---try_2 
+
+PS D:\David\tmp> cd ..\ 
+PS D:\David> cd .\my_repos_dwb\multimodal-jupy-logger\ 
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> git status 
+On branch initial-code-and-pdf-and-tee 
+Your branch is up to date with 'origin/initial-code-and-pdf-and-tee'. 
+
+Changes not staged for commit: 
+(use "git add <file>..." to update what will be committed) 
+(use "git restore <file>..." to discard changes in working directory) 
+modified: docs/context_documents/LN_mmjl_2026-07-02_ctx01_-_initial_wide_ranging_project_doc.md 
+
+Untracked files: (use "git add <file>..." to include in what will be committed) 
+docs/dev_notes/future_cli_directions.md docs/dev_notes/import_before_portable_smoke_tests.md 
+
+no changes added to commit (use "git add" and/or "git commit -a") 
+
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> git add --all 
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> git status 
+On branch initial-code-and-pdf-and-tee 
+Your branch is up to date with 'origin/initial-code-and-pdf-and-tee'. 
+
+Changes to be committed: (use "git restore --staged <file>..." to unstage) 
+modified: docs/context_documents/LN_mmjl_2026-07-02_ctx01_-_initial_wide_ranging_project_doc.md 
+new file: docs/dev_notes/future_cli_directions.md 
+new file: docs/dev_notes/import_before_portable_smoke_tests.md 
+
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> git commit -m "dev notes for cli and import checks on pdf module" 
+[initial-code-and-pdf-and-tee b268fcb] 
+dev notes for cli and import checks on pdf module 
+3 files changed, 
+611 insertions(+) 
+create mode 100644 docs/dev_notes/future_cli_directions.md 
+create mode 100644 docs/dev_notes/import_before_portable_smoke_tests.md 
+
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> git status 
+On branch initial-code-and-pdf-and-tee 
+Your branch is ahead of 'origin/initial-code-and-pdf-and-tee' by 1 commit. 
+(use "git push" to publish your local commits) 
+
+nothing to commit, working tree clean 
+
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> git pull 
+Enter passphrase for key '/c/Users/bball/.ssh/id_ed25519': 
+
+Already up to date. 
+
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> git push 
+Enter passphrase for key '/c/Users/bball/.ssh/id_ed25519': 
+
+Enumerating objects: 13, done. 
+Counting objects: 100% (13/13), done. 
+Delta compression using up to 4 threads 
+Compressing objects: 100% (8/8), done. 
+Writing objects: 100% (8/8), 4.00 KiB | 2.00 MiB/s, done. 
+Total 8 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0) 
+
+remote: Resolving deltas: 100% (3/3), 
+completed with 3 local objects. 
+To github.com:bballdave025/multimodal-jupy-logger.git 
+abde49a..b268fcb initial-code-and-pdf-and-tee -> initial-code-and-pdf-and-tee 
+
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> git branch 
+* initial-code-and-pdf-and-tee main 
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> git status 
+On branch initial-code-and-pdf-and-tee 
+Your branch is up to date with 'origin/initial-code-and-pdf-and-tee'. 
+
+nothing to commit, working tree clean 
+
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> ls 
+Directory: D:\David\my_repos_dwb\multimodal-jupy-logger 
+
+Mode   LastWriteTime     Length Name 
+----   -------------     ------ ---- 
+d----- 6/19/2026 3:23 PM        .venv_mmjl_test 
+d----- 7/9/2026  8:49 AM        docs 
+d----- 7/10/2026 9:28 PM        examples 
+d----- 6/29/2026 3:02 PM        jupy_log 
+d----- 6/19/2026 3:09 PM        src 
+-a---- 6/19/2026 3:09 PM 5137   .gitattributes 
+-a---- 6/29/2026 6:41 PM 6329   .gitignore 
+-a---- 6/19/2026 3:09 PM 1068   LICENSE 
+-a---- 6/19/2026 3:09 PM 2992   README.md 
+-a---- 6/19/2026 3:09 PM 4364   reproducibility_win_init__requirements.txt 
+-a---- 6/19/2026 6:20 PM 4406   repr_win_laptop_init__requirements.txt 
+-a---- 6/19/2026 3:09 PM 73     requirements-ml.txt 
+-a---- 6/19/2026 3:09 PM 143    requirements.txt 
+
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> cp .\examples\mmjl_portable_smoke_test.ipynb ..\..\tmp\try_1\ 
+PS D:\David\my_repos_dwb\multimodal-jupy-logger> .\.venv_mmjl_test\Scripts\Activate.ps1 
+(.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> cd ..\..\tmp\try_1\ 
+(.venv_mmjl_test) PS D:\David\tmp\try_1> ls 
+Directory: D:\David\tmp\try_1 
+Mode   LastWriteTime     Length Name 
+----   -------------     ------ ---- 
+-a---- 7/10/2026 9:28 PM 11359  mmjl_portable_smoke_test.ipynb 
+(.venv_mmjl_test) PS D:\David\tmp\try_1> ls
 
 
     Directory: D:\David\tmp\try_1
@@ -15,34 +118,17 @@ Mode                 LastWriteTime         Length Name
 -a----         7/10/2026   9:28 PM          11359 mmjl_portable_smoke_test.ipynb
 
 
-PS D:\David\tmp\try_1> Get-Date
+(.venv_mmjl_test) PS D:\David\tmp\try_1> Get-Date
 
 Sunday, July 12, 2026 7:04:44 AM
 
 
-PS D:\David\tmp\try_1> Get-Date -Format "o"
+(.venv_mmjl_test) PS D:\David\tmp\try_1> Get-Date -Format "o"
 2026-07-12T07:04:51.6207007-04:00
-PS D:\David\tmp\try_1> Get-Date -UFormat "%s"
+(.venv_mmjl_test) PS D:\David\tmp\try_1> Get-Date -UFormat "%s"
 1783839911.28716
-PS D:\David\tmp\try_1> cd D:\David\my_repos_dwb\multimodal-jupy-logger\
+(.venv_mmjl_test) PS D:\David\tmp\try_1> cd D:\David\my_repos_dwb\multimodal-jupy-logger\
 PS D:\David\my_repos_dwb\multimodal-jupy-logger> Get-ExecutionPolicy -Table
-Get-ExecutionPolicy : A parameter cannot be found that matches parameter name 'Table'.
-At line:1 char:21
-+ Get-ExecutionPolicy -Table
-+                     ~~~~~~
-    + CategoryInfo          : InvalidArgument: (:) [Get-ExecutionPolicy], ParameterBindingException
-    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.GetExecutionPolicyCommand
-
-PS D:\David\my_repos_dwb\multimodal-jupy-logger> Get-ExecutionPolicy -Format Table
-Get-ExecutionPolicy : A parameter cannot be found that matches parameter name 'Format'.
-At line:1 char:21
-+ Get-ExecutionPolicy -Format Table
-+                     ~~~~~~~
-    + CategoryInfo          : InvalidArgument: (:) [Get-ExecutionPolicy], ParameterBindingException
-    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.GetExecutionPolicyCommand
-
-PS D:\David\my_repos_dwb\multimodal-jupy-logger> Get-ExecutionPolicy
-Restricted
 PS D:\David\my_repos_dwb\multimodal-jupy-logger> Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 PS D:\David\my_repos_dwb\multimodal-jupy-logger> .\.venv_mmjl_test\Scripts\Activate.ps1
 (.venv_mmjl_test) PS D:\David\my_repos_dwb\multimodal-jupy-logger> cd D:\David\tmp\try_1\

@@ -1,5 +1,12 @@
 '''
 Metadata helpers for Multimodal Jupy Logger.
+
+@file   : jupy_pdf_utils.py
+@author : David Black        GitHub: @bballdave025     comments signed "DWB"
+@since  : 2026-06-1x, mid-June 2026
+
+Part of the `multimodal-jupy-logger` project, which can potentially be
+a package.
 '''
 
 from __future__ import annotations

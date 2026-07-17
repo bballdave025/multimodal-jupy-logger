@@ -1,3 +1,16 @@
+# MMJL Source Transfer — Part 1 of 4
+
+For each section, open the stated destination file, paste only the contents inside its code fence, and save the file.
+
+## File: `src/multimodal_jupy_logger/logger.py`
+
+Save as:
+
+```text
+~/multimodal-jupy-logger/src/multimodal_jupy_logger/logger.py
+```
+
+```python
 '''
 Core logging engine for Multimodal Jupy Logger.
 
@@ -980,3 +993,4 @@ class MultimodalJupyLogger:
     return out_path
   ##endof:  build_markdown(...)
 ##endof:  class MultimodalJupyLogger
+```

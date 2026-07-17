@@ -2,6 +2,13 @@
 '''
 Command interface for Multimodal Jupy Logger.
 
+@file   : jupy_pdf_utils.py
+@author : David Black        GitHub: @bballdave025
+@since  : 2026-06-1x, mid-June 2026
+
+Part of the `multimodal-jupy-logger` project, which can potentially be
+a package.
+
 This module is intentionally importable as Python code and runnable as a
 command-line module.
 
